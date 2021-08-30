@@ -19,6 +19,7 @@ namespace Interview
         {
             var book1 = new SciFiBook("book1");
             SetName_ref(ref book1, "book2");
+            Console.WriteLine(book1.name);
 
             SciFiBook book2;
             SetName_out(out book2, "book3");

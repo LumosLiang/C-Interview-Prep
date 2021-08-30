@@ -1,6 +1,6 @@
 ﻿namespace Interview
 {
-    internal abstract class BookBase
+    internal abstract class BookBase: IBook
     {
 
         // defining a field

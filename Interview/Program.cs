@@ -65,6 +65,10 @@ namespace Interview
 
             #endregion
 
+            EnumTest et1 = EnumTest.Autumn;
+            EnumTest et2 = EnumTest.Summer;
+            Console.WriteLine(et1);
+
 
 
         }

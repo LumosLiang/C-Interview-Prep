@@ -185,7 +185,11 @@ string is reference type, but it act like a value type
 
 ### Pass by reference and Pass by value and ref/out
 
-See demo
+**See demo**
+
+ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
+
+So while ref is two-ways, out is out-only.
 
 ### boxing and unboxing
 
@@ -322,6 +326,11 @@ Class Name
 }
 ```
 
+#### Constructor Chain
+
+#### Static Constr
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors
+
 
 ## C# Class Charcteristics
 
@@ -335,13 +344,36 @@ C# has memebers such as fields, methods, properties, events.
 
 ### Properties: getter and setter
 
+- C# properties are members of a C# class that provide a flexible mechanism to read, write or compute the values of private fields, in other words, by using properties, we can access private fields and set their values. 
+- **Properties in C# are always public data members**. Properties can be used as if they are public data members, but they are actually special methods called accessors.
+- C# properties use get and set methods, also known as accessors, to access and assign values to private fields.
+ 
+What are accessors?
+ 
+The get and set portions or blocks of a property are called accessors. These are useful to restrict the accessibility of a property. 
+The set accessor specifies that we can assign a value to a private field in a property.
+Without the set accessor property, it is like a readonly field. 
+With the 'get' accessor we can access the value of the private field. 
+In other words, it returns a single value. A Get accessor specifies that we can access the value of a field publically.
+ 
+We have three types of properties: Read/Write, ReadOnly, and WriteOnly
+
+
 ### access modifiers
 - public 
 - private
 - internal
 - protected
 
-### readonly, constant 
+### readonly, constant
+
+- readonly can be changed via constructor, even during the runtime. As long as you change this in the constructor
+- Constant is nothing but "constant", a variable of which the value is constant but at compile time.It's mandatory to assign a value to it. 
+- By default, a const is static and we cannot change the value of a const variable throughout the entire program.
+
+https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c
+https://www.c-sharpcorner.com/UploadFile/c210df/difference-between-const-readonly-and-static-readonly-in-C-Sharp/
+
 
 ### delegate
 
@@ -352,8 +384,6 @@ C# has memebers such as fields, methods, properties, events.
 ## C# Class OOP, from the logic perspective
 
 ### Inheritance, overriding
-
-### Constructor Chain
 
 ### Abstract
 
@@ -368,7 +398,8 @@ C# has memebers such as fields, methods, properties, events.
 - Cannot be instantiated
 - An abstract class may contain abstract methods and accessors, so abstract class can have actual implementation for method
 - A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
-- Abstract 
+- It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings. 
+The **sealed** modifier prevents a class from being inherited **and the abstract modifier requires a class to be inherited.** 
 
 **Abstract method feature**
 - Abstract method declarations are only permitted in abstract classes.
@@ -380,7 +411,58 @@ C# has memebers such as fields, methods, properties, events.
 
 ### Interface
 
+- Interface is more common than abstract in daily C# usage
+- Interface defines a contract. Any class or struct that implements that contracts must provide an implementation of the members defines in the interface.
+- An interface declaration can contain declarations of following:
+  - methods
+  - properties
+  - indexers
+  - events
 
 
 ### Abstract VS Interface
+- A class can implement any number of interfaces but a subclass can at most use only one abstract class.
+- An abstract class can have non-abstract methods (concrete methods) while in case of interface, all the methods have to be abstract.
+- An abstract class can declare or use any variables while an interface is not allowed to do so.
+- In an abstract class, all data members or functions are private by default while in an interface all are public, we can’t change them manually.
+- In an abstract class, we need to use abstract keywords to declare abstract methods, while in an interface we don’t need to use that.
+- An abstract class can’t be used for multiple inheritance while the interface can be used as multiple inheritance.
+- An abstract class use constructor while in an interface we don’t have any type of constructor.
 
+
+# Other
+
+## Enum
+
+Enum is **value type**
+
+- By default, the associated constant values of enum members are of type int; they start with zero and increase by one following the definition text order. 
+- You can explicitly specify any other integral numeric type as an underlying type of an enumeration type. 
+- You can also explicitly specify the associated constant values, as the following example shows
+
+```<C#>
+enum Season
+{
+    Spring,
+    Summer,
+    Autumn,
+    Winter
+}
+```
+
+```<C#>
+enum Season: short
+{
+    Spring = 1,
+    Summer = 3,
+    Autumn = 5,
+    Winter = 7
+}
+```
+
+**Constants can be referred to in a consistent, expressive and type safe way.**
+
+ref:
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum
+https://stackoverflow.com/questions/3519429/what-is-main-use-of-enumeration

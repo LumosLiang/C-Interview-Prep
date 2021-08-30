@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessTest.cs" />
+    <Compile Include="EnumTest.cs" />
     <Compile Include="SciFiBook.cs" />
     <Compile Include="BookBase.cs" />
     <Compile Include="IBook.cs" />
