@@ -1,15 +1,7 @@
 ﻿# NOTES
 
-## About VS
-- What is the difference between .Net Core and .Net Framework
-- Referrences VS dependencies
+PDB, dll, exe, debug
 
+boxing unboxing
 
-### About C#
-
-	static void Main(string[] args)
-Is this Always there?
-
-- Region 
-- linq
-###
+why generics is related to this?

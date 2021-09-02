@@ -134,6 +134,8 @@ ref:
 
 https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line
 
+
+
 ## data type $ variable declarision
 
 - sbyte, byte
@@ -144,9 +146,137 @@ https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/ma
 - string 
 - implcity typing -> var. implcit type varible must be initialized
 
-## Varibles: Reference Types and Value Types
 
-### concept
+## string and string bulider
+
+**Something is mutable only when we are able to change the *values* held in the memory location without changing the memory location itself**
+
+**String**
+- A string is immutable object. 
+- A moidification to a string is actually creating a new instance in the memory for hold the new value in a string object
+- Performace is not that good as it will create new memory instance and point var to it
+
+**StringBuilder**
+
+- String is mutable.
+- Performance is better.
+- Belong to System.Text.Stringbuilder
+
+Stringbuilder has  methods like append, clear.
+
+ref:
+
+https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0
+https://stackoverflow.com/questions/9097994/arent-python-strings-immutable-then-why-does-a-b-work
+
+## Array 
+
+    float[] numbers = new float[3];
+    float[] numbers = new float[3]{1.1,2.2,3.3};
+    float[] numbers = new float[]{1.1,2.2,3.3};
+    var numbers = new[]{1,2,3,4};
+
+- array can be fixed or dynamic
+- can initiate single, multil dimension arrays 
+- can define jagged array, which is array in clude array
+- array has several ways to be initiated. The default value of array depends on the member type, if it is value type, its 0; if ref type, then it is null
+- array is a reference type itself, array is a class, method like append, sort, binarysearch are all included
+
+This is very different with Python...
+
+ref:
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/single-dimensional-arrays
+
+
+#### copyto() and clone()
+
+The Array.Clone() method creates a shallow copy of an array. 
+A shallow copy of an Array copies only the elements of the Array, whether they are reference types or value types, but it does not copy the objects that the references refer to. 
+The references in the new Array point to the same objects that the references in the original Array point to.
+ 
+The CopyTo() static method of the Array class copies a section of an array to another array. 
+The CopyTo method copies all the elements of an array to another one-dimension array. 
+
+Both of them are shadow copy, no new instance is created.
+
+ref:
+https://www.geeksforgeeks.org/shallow-copy-and-deep-copy-in-c-sharp/
+https://stackoverflow.com/questions/198496/difference-between-the-system-array-copyto-and-system-array-clone
+
+## List
+
+    List<int> numbers = new List<int>();
+    var numbers = new List<double>(){1.1, 1.2, 1.3};
+
+
+List VS array.
+
+> It is rare, in reality, that you would want to use an array. Definitely use a List<T> any time you want to add/remove data, since resizing arrays is expensive. 
+> If you know the data is fixed length, and you want to micro-optimise for some very specific reason (after benchmarking), then an array may be useful.
+> 
+> List<T> offers a lot more functionality than an array (although LINQ evens it up a bit), and is almost always the right choice. Except for params arguments, of course. ;-p
+> As a counter - List<T> is one-dimensional; where-as you have have rectangular (etc) arrays like int[,] or string[,,] - but there are other ways of modelling such data (if you need) in an object model.
+> 
+> https://stackoverflow.com/questions/434761/array-versus-listt-when-to-use-which
+
+
+The Parentheses --> ? 
+
+## Nullable
+
+A nullable type is a data type is that contains the defined data type or the null value.
+ 
+This nullable type concept is not compatible with "var".
+ 
+Any **data type** can be declared **nullable type** with the help of operator "?". 
+ 
+## hashtable
+
+- key/value pair acheived through hash algorithm
+- Dictionary implementation in the .net is based on the Hashtable
+
+> The generic Dictionary was copied from Hashtable's source
+
+ref: https://stackoverflow.com/questions/301371/why-is-dictionary-preferred-over-hashtable-in-c
+
+## is VS as
+
+- "is" is used to determine if an object can be cast into some specifc type
+- "as" is I will firstly try to cast into this type, but if fails, I will return null
+
+ref:
+https://stackoverflow.com/questions/3786361/difference-between-is-and-as-keyword
+
+## equals() VS == VS ReferenceEquals
+
+> Equals is an instance method that takes one parameter (which can be null). Since it is an instance method (must be invoked on an actual object), it can't be invoked on a null-reference.
+> 
+> ReferenceEquals is a static method that takes two parameters, either / both of which can be null. Since it is static (not associated with an object instance), it will not throw a NullReferenceException under any circumstances.
+> 
+> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw aNullReferenceExceptioneither
+> 
+
+ref:
+https://stackoverflow.com/questions/3869601/c-sharp-equals-referenceequals-and-operator
+
+## Generics
+
+- Can hold different type of object
+- No casting
+- Type safe
+- Better performance
+
+ref:
+
+Why Should I use generics? Why it is good
+https://stackoverflow.com/questions/3606595/understanding-c-sharp-generics-much-better/3606655
+
+
+## Type: 
+
+### Reference Types and Value Types
+
+### Concept
 
 The reference type varible holds a reference to the object
 
@@ -191,6 +321,7 @@ ref tells the compiler that the object is initialized before entering the functi
 
 So while ref is two-ways, out is out-only.
 
+
 ### boxing and unboxing
 
 Boxing and Unboxing both are used for type conversions.
@@ -200,6 +331,13 @@ Boxing is an implicit conversion.
 
 Why do we need boxing and unboxing?
 
+### Default type
+
+```<language>
+int a = default(int)
+```
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
 
 ### ref:
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types
@@ -207,25 +345,6 @@ https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out-p
 https://www.c-sharpcorner.com/UploadFile/ff2f08/ref-vs-out-keywords-in-C-Sharp/ 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/structs
 https://stackoverflow.com/questions/2111857/why-do-we-need-boxing-and-unboxing-in-c
-
-
-## array initialization
-
-    float[] numbers = new float[3];
-    float[] numbers = new float[3]{1.1,2.2,3.3};
-    float[] numbers = new float[]{1.1,2.2,3.3};
-    var numbers = new[]{1,2,3,4};
-
-## Generics
-
-
-
-### List
-
-    List<int> numbers = new List<int>();
-    var numbers = new List<double>(){1.1, 1.2, 1.3};
-
-The Parentheses --> ? 
 
 
 ## flow control
@@ -240,11 +359,45 @@ The Parentheses --> ?
     {
     }
 
-### do while
+### do while VS while
+
+The do statement executes a statement or a block of statements while a specified Boolean expression evaluates to true. 
+Because that expression is evaluated after each execution of the loop, a do loop executes one or more times.
+
+This differs from a while loop, which executes zero or more times.
+
+See demo.
+
 
 ### Switch, Case
 
-### Continue, Break
+```<language>
+Swtich()
+{
+    case A/ Case case safe guard
+    {
+        exeucte sth;
+        Jump statement: break, return, throw, goto
+    }
+    case B/ Case case safe guard
+    {}
+    case C/ Case case safe guard
+    {}
+}
+```
+
+The default case can appear in any place within a switch statement. 
+Regardless of its position, the default case is always evaluated last and only if all other case patterns aren't matched.
+
+C# 9.0, the case declarition becomes more intuitive.  
+
+
+### Continue, Break, Goto, return 
+
+Continue: go to the next iteration
+Break: break the current iteration and jump out of the loop; break switch
+Goto: go to other case in switch, or go to "label statement"?
+return: very typically used in function that need to return values. 
 
 
 # Classes
@@ -276,7 +429,15 @@ The Parentheses --> ?
 
 #### method overloading
 
+**method overloading is the common way of implementing polymorphism**
 
+- method signature, name, and parameter(order, name, type)
+- method overload
+
+ref:
+https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading
+https://www.geeksforgeeks.org/c-sharp-method-overloading/
+https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading
 
 ### defining a field
 
@@ -296,10 +457,31 @@ The Parentheses --> ?
     }
 
 
-
 ### class field initilization
 
 this
+
+### defining a Properties: getter and setter
+
+- C# properties are members of a C# class that provide a flexible mechanism to read, write or compute the values of private fields, in other words, by using properties, we can access private fields and set their values. 
+- **Properties in C# are always public data members**. Properties can be used as if they are public data members, but they are actually special methods called accessors.
+- C# properties use get and set methods, also known as accessors, to access and assign values to private fields.
+ 
+What are accessors?
+ 
+The get and set portions or blocks of a property are called accessors. These are useful to restrict the accessibility of a property. 
+The set accessor specifies that we can assign a value to a private field in a property.
+Without the set accessor property, it is like a readonly field. 
+With the 'get' accessor we can access the value of the private field. 
+In other words, it returns a single value. A Get accessor specifies that we can access the value of a field publically.
+ 
+We have three types of properties: Read/Write, ReadOnly, and WriteOnly
+ 
+### defining a delegate
+
+
+
+
 
 ### Constructors
 
@@ -326,9 +508,16 @@ Class Name
 }
 ```
 
-#### Constructor Chain
+#### default construtor
 
-#### Static Constr
+> If you don't provide a constructor for your class, C# creates one by default that instantiates the object and sets member variables to the default values as listed in the Default values of C# types article. If you don't provide a constructor for your struct, 
+> C# relies on an implicit parameterless constructor to automatically initialize each field to its default value. 
+
+#### constructor overloading?
+
+To create different constructors
+
+#### Static Constructor
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors
 
 
@@ -336,36 +525,30 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-str
 
 C# is of course Object-Oriented programming language, which have that three main charateristics:
 - Encapsulation:
-  - try to do not repeat implementations. But 
+  - try to "do not repeat yourself" implementations.  
 - Polymorphism
 - Inheritance
 
-C# has memebers such as fields, methods, properties, events.
+C# has memebers such as fields, methods, properties, delegate, events.
 
-### Properties: getter and setter
-
-- C# properties are members of a C# class that provide a flexible mechanism to read, write or compute the values of private fields, in other words, by using properties, we can access private fields and set their values. 
-- **Properties in C# are always public data members**. Properties can be used as if they are public data members, but they are actually special methods called accessors.
-- C# properties use get and set methods, also known as accessors, to access and assign values to private fields.
- 
-What are accessors?
- 
-The get and set portions or blocks of a property are called accessors. These are useful to restrict the accessibility of a property. 
-The set accessor specifies that we can assign a value to a private field in a property.
-Without the set accessor property, it is like a readonly field. 
-With the 'get' accessor we can access the value of the private field. 
-In other words, it returns a single value. A Get accessor specifies that we can access the value of a field publically.
- 
-We have three types of properties: Read/Write, ReadOnly, and WriteOnly
+Want to talk about the refactoring a little bit here:
+- Encapsulate fields
+- Extract method -> To generate a block of code to a new method. 
+- Generalize Type -> to generalize a base class. And make fully use of the Polymorphism to override/overload. 
+- Pull up -> to move childrens to parent
+- Push down -> to move parents to childrens
 
 
-### access modifiers
+
+### modifiers
+
+#### access modifiers
 - public 
 - private
 - internal
 - protected
 
-### readonly, constant
+#### readonly, constant
 
 - readonly can be changed via constructor, even during the runtime. As long as you change this in the constructor
 - Constant is nothing but "constant", a variable of which the value is constant but at compile time.It's mandatory to assign a value to it. 
@@ -374,18 +557,26 @@ We have three types of properties: Read/Write, ReadOnly, and WriteOnly
 https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c
 https://www.c-sharpcorner.com/UploadFile/c210df/difference-between-const-readonly-and-static-readonly-in-C-Sharp/
 
+#### sealed
 
-### delegate
+prevent to be inherited.
 
-### Event   
+Sealed classes are used to restrict the inheritance feature of object-oriented programming. 
+Once a class is defined as a sealed class, the class cannot be inherited. 
 
+struct is sealed. 
 
+#### static
+static can be used to declare class.
+In class, static can be used to describle fields, methods, properties, events, operators, and constructors
 
-## C# Class OOP, from the logic perspective
+A static class:
+- Contains only static members.
+- Cannot be instantiated.
+- Is sealed.
+- Cannot contain Instance Constructors. 
 
-### Inheritance, overriding
-
-### Abstract
+#### Abstract
 
 **Concept**
 - The abstract modifier indicates that the thing being modified has a missing or incomplete implementation. 
@@ -396,18 +587,45 @@ https://www.c-sharpcorner.com/UploadFile/c210df/difference-between-const-readonl
 **Abstract Class feature**
 
 - Cannot be instantiated
-- An abstract class may contain abstract methods and accessors, so abstract class can have actual implementation for method
+- An abstract class may contain abstract methods and accessors, **so abstract class can have actual implementation for method**
 - A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
 - It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings. 
+
 The **sealed** modifier prevents a class from being inherited **and the abstract modifier requires a class to be inherited.** 
 
 **Abstract method feature**
-- Abstract method declarations are only permitted in abstract classes.
+- **Abstract method declarations are only permitted in abstract classes.** <https://stackoverflow.com/questions/22161297/why-can-abstract-methods-only-be-declared-in-abstract-classes>
 - It is an error to use the static or virtual modifiers in an abstract method declaration
 
 **Abstract properties feature**
 - It is an error to use the abstract modifier on a static property.
 - An abstract inherited property can be overridden in a derived class by including a property declaration that uses the override modifier
+
+ref:
+
+https://stackoverflow.com/questions/10942599/c-abstract-and-non-abstract-methods-in-an-abstract-class
+https://stackoverflow.com/questions/22161297/why-can-abstract-methods-only-be-declared-in-abstract-classes
+https://stackoverflow.com/questions/4811678/defining-an-abstract-class-without-any-abstract-methods
+
+#### Virtual
+
+A virtual method is a method that can be redefined in derived classes
+A virtual method has an implementation in a base class as well as derived class.
+It of course can be override. But it is optional. 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual
+
+**Virtual & Abstract Difference**
+
+An abstract function cannot have functionality. You're basically saying, any child class MUST give their own version of this method, 
+however it's too general to even try to implement in the parent class.
+
+A virtual function, is basically saying look, here's the functionality that may or may not be good enough for the child class. 
+So if it is good enough, use this method, if not, then override me, and provide your own functionality.
+
+ref:
+
+https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abstract-method-and-a-virtual-method
 
 ### Interface
 
@@ -420,7 +638,7 @@ The **sealed** modifier prevents a class from being inherited **and the abstract
   - events
 
 
-### Abstract VS Interface
+#### Abstract VS Interface
 - A class can implement any number of interfaces but a subclass can at most use only one abstract class.
 - An abstract class can have non-abstract methods (concrete methods) while in case of interface, all the methods have to be abstract.
 - An abstract class can declare or use any variables while an interface is not allowed to do so.
@@ -428,6 +646,41 @@ The **sealed** modifier prevents a class from being inherited **and the abstract
 - In an abstract class, we need to use abstract keywords to declare abstract methods, while in an interface we don’t need to use that.
 - An abstract class can’t be used for multiple inheritance while the interface can be used as multiple inheritance.
 - An abstract class use constructor while in an interface we don’t have any type of constructor.
+
+### Inheritance,
+
+Inheritance enables you to create new classes that **reuse, extend, and modify** the behavior defined in other classes. 
+The class whose members are inherited is called the base class, and the class that inherits those members is called the derived class. 
+A derived class can have only one direct base class
+
+
+#### Constructor Chain
+
+> No, you can't override constructors. The concept makes no sense in C#, because constructors simply aren't invoked polymorphically. 
+> You always state which class you're trying to construct, and the arguments to the constructor.
+> 
+> Constructors aren't inherited at all - but all constructors from a derived class must chain either to another constructor in the same class, or to one of the constructors in the base class. 
+> If you don't do this explicitly, the compiler implicitly chains to the parameterless constructor of the base class (and an error occurs if that constructor doesn't exist or is inaccessible).
+> 
+> https://stackoverflow.com/questions/11271920/is-it-possible-to-override-a-constructor-in-c
+
+Constructor chaining is a way to connect two or more classes in a relationship as Inheritance. 
+In Constructor Chaining, every child class constructor is mapped to a parent class Constructor implicitly by base keyword,
+so when you create an instance of the child class, it will call the parent’s class Constructor. Without it, inheritance is not possible
+
+#### overriding
+
+override is only for methods, for behaviors. No constructor
+And override only happend for virtual and abstract methods, you cannot override a non-virtual method
+
+
+## Other parts about C# class
+
+### Partial 
+
+
+
+
 
 
 # Other
@@ -466,3 +719,8 @@ ref:
 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum
 https://stackoverflow.com/questions/3519429/what-is-main-use-of-enumeration
+
+## IEnumerable
+
+
+## 
