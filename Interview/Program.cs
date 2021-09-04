@@ -36,20 +36,7 @@ namespace Interview
 
             #endregion
 
-            #region getter and setter
-            SciFiBook book3 = new SciFiBook("Book3");
-            Console.WriteLine(book3.name);
-            book3.name = "Book4";
-            Console.WriteLine(book3.name);
-
-            book3.AddComments(3);
-            Console.WriteLine();
-
-            #endregion
-
-            #region access/modifier
-
-            #endregion
+   
 
             #region boxing and unboxing
 
@@ -66,9 +53,67 @@ namespace Interview
 
             #endregion
 
+            #region Enum
             EnumTest et1 = EnumTest.Autumn;
             EnumTest et2 = EnumTest.Summer;
             Console.WriteLine(et1);
+            #endregion
+
+            #region is VS as
+
+            #endregion
+
+            #region Equals VS ==
+
+            #endregion
+
+            #region access/modifier
+
+            #endregion
+
+            #region access/modifier
+
+            #endregion
+
+            #region getter and setter
+            SciFiBook book3 = new SciFiBook("Book3");
+            Console.WriteLine(book3.name);
+            book3.name = "Book4";
+            Console.WriteLine(book3.name);
+
+            book3.AddComments(3);
+            Console.WriteLine();
+
+            #endregion
+
+            #region abstract Vs virtual
+
+            #endregion
+
+            #region constant VS readonly
+
+            #endregion
+
+            #region sealed
+
+            #endregion
+
+            #region static
+
+            #endregion
+
+            #region basic inheritance
+
+            #endregion
+
+            #region Polymorphism
+
+            #endregion
+
+
+            #region inteface
+
+            #endregion
 
 
 
@@ -238,8 +283,6 @@ namespace Interview
         }
 
 
-
-        DayOfWeek
 
     }
 }

@@ -6,11 +6,11 @@
 
 .net core VS. net framework VS .net standard VS .net SDK
 
-
 My understanding:
 - .Net core is cross-platform, open-source, CLI(common line) supported
 - .Net framework is mainly target for windows OS and web development
-- .Net standrad is a interface, a wider, more common library definition. .Net core and .Net framework are the implemetation of .Net library.
+- .Net standrad is a interface, a wider, more common library definition. 
+  - .Net core and .Net framework are the implemetation of .Net library.
 
 "In short: to achieve maximum portability, make your library target .NET Standard."
 
@@ -25,16 +25,21 @@ https://gist.github.com/davidfowl/8939f305567e1755412d6dc0b8baf1b7
 
 ## .Net component
 
-- .Net = CLR + FCL, + compiler, so complier is not part of .Net I guess.
+.Net = CLR + FCL + progamming language, + compiler, so complier is not part of .Net.
+> 
+> NET Framework = libraries (FCL, BCL), language compilers (C#, VB.NET) and Common Language Runtime (CLR)
 
-### Some terms
+But noted that later, microsoft decoupled the C# compiler, language version, and .NET Framework. So I guess .Net framework
+Only includes Libraries and  CLR.
 
-- CLR - common language runtime -> Runtime, a virtual machine.
-- FCL - Framework class library -> library
-- BCL - Base Class library, BCL is includedd in the FCL
-- IL - Inmediate language
-- CLS - Common language Specifications
-- CTS - Common language Type
+### Some terms in .Net
+
+- CLR -> common language runtime -> Runtime, a virtual machine.
+- FCL -> Framework class library -> library
+- BCL -> Base Class library, BCL is includedd in the FCL
+- IL -> immediate language
+- CLS -> Common language Specifications
+- CTS -> Common language Type
 
 My understanding: 
 - CLR is the virtual machine, that being responsible for executing code with JIT compliers, managing memory,
@@ -45,7 +50,6 @@ handling exceptions, debugging, collecting garbage, supporting threads, etc. CLR
 - CLS: CLS is includes in the CTS
 
 Ref:
-
 https://stackoverflow.com/questions/807880/bcl-base-class-library-vs-fcl-framework-class-library
 https://www.linkedin.com/pulse/what-ctscls-fcl-bcl-crl-net-framework-pawan-verma
 https://www.cnblogs.com/eshizhan/archive/2010/01/26/1657041.html
@@ -61,9 +65,9 @@ ref:
 
 https://www.cnblogs.com/chucklu/p/11300738.html
 
-### process
+### complile process
 
-C# source code -> complier-> CIL(dll, exe) -> CLR
+C# source code -> (complied as) CIL(dll, exe) -> (execuated) CLR -> machine code
  
 ref:
 
@@ -74,10 +78,14 @@ https://www.cnblogs.com/May-day/p/6594574.html
 
 cmd dotnet
 
-dotnet --info
-dotnet --help
-dotnet --new
-
+- dotnet --info
+- dotnet --help
+- dotnet --new
+- dotnet new
+- dotnet restore
+- dotnet build
+- dotnet test
+- dotnet run
 
 ## .net project in IDE
 
@@ -98,9 +106,10 @@ dotnet --new
 
 ## .Net's packages -> nuget
 
-.net run - what happen after .net run
-- .net restore: restore all the packages
-- .net build
+> "What is NuGet? NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to produce and consume packages. 
+> The NuGet Gallery is the central package repository used by all package authors and consumers.
+
+Like in pip in the python, and npm in the js
 
 ## Managed Code VS Unmanaged Code
 
@@ -122,19 +131,25 @@ The .NET Framework provides a mechanism for unmanaged code to be used in managed
 
 **PDB, dll, exe, debug**
 
+
+
+https://www.wintellect.com/pdb-files-what-every-developer-must-know/
+https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019
+
+
 # C# Syntax
 
 ## main() method
 - The Main method is the entry point of the C# application.
 - Library and Service Does not require a Main method as an entry point
-- There can only be one entry point in a C# program
+- **There can only be one entry point in a C# program**
 - The Main method can be declared with or without a string[] parameter that contains **command-line arguments**.
 - Main must be static and it need not be public. 
+
+
 ref:
 
 https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line
-
-
 
 ## data type $ variable declarision
 
@@ -145,7 +160,6 @@ https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/ma
 - char
 - string 
 - implcity typing -> var. implcit type varible must be initialized
-
 
 ## string and string bulider
 
@@ -158,11 +172,11 @@ https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/ma
 
 **StringBuilder**
 
-- String is mutable.
+- Stringbuilder object is mutable.
 - Performance is better.
 - Belong to System.Text.Stringbuilder
 
-Stringbuilder has  methods like append, clear.
+Stringbuilder has methods like append, clear.
 
 ref:
 
@@ -239,25 +253,6 @@ Any **data type** can be declared **nullable type** with the help of operator "?
 
 ref: https://stackoverflow.com/questions/301371/why-is-dictionary-preferred-over-hashtable-in-c
 
-## is VS as
-
-- "is" is used to determine if an object can be cast into some specifc type
-- "as" is I will firstly try to cast into this type, but if fails, I will return null
-
-ref:
-https://stackoverflow.com/questions/3786361/difference-between-is-and-as-keyword
-
-## equals() VS == VS ReferenceEquals
-
-> Equals is an instance method that takes one parameter (which can be null). Since it is an instance method (must be invoked on an actual object), it can't be invoked on a null-reference.
-> 
-> ReferenceEquals is a static method that takes two parameters, either / both of which can be null. Since it is static (not associated with an object instance), it will not throw a NullReferenceException under any circumstances.
-> 
-> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw aNullReferenceExceptioneither
-> 
-
-ref:
-https://stackoverflow.com/questions/3869601/c-sharp-equals-referenceequals-and-operator
 
 ## Generics
 
@@ -275,8 +270,6 @@ https://stackoverflow.com/questions/3606595/understanding-c-sharp-generics-much-
 ## Type: 
 
 ### Reference Types and Value Types
-
-### Concept
 
 The reference type varible holds a reference to the object
 
@@ -301,7 +294,7 @@ string is reference type, but it act like a value type
 **Struct**
 - The struct is a value type in C# and it inherits from System.Value Type.
 - Struct is usually used for smaller amounts of data.
-- Struct can’t be inherited from other types ?? so struct can inherit others, but it can't be inherited by others.
+- Struct can’t be inherited from other types. so struct can inherit others, but it can't be inherited by others.
 - A structure can't be abstract.
 - No need to create an object with a **new** keyword.
 - Do not have permission to create any default constructor.
@@ -317,9 +310,17 @@ string is reference type, but it act like a value type
 
 **See demo**
 
-ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
+> ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
+> 
+> So while **ref is two-ways, out is out-only.**
 
-So while ref is two-ways, out is out-only.
+so ref must be initialized before entering the method, and does not have to be initiated or re-assigned before leaving the calling method;
+while out does not have to be initiated before entering, but must be initiated or assigned a value before leaving
+
+That is why ref is useful when method wants to changing sth; while out is useful when method wants to return multiple outputs
+
+ref:
+https://stackoverflow.com/questions/388464/whats-the-difference-between-the-ref-and-out-keywords
 
 
 ### boxing and unboxing
@@ -329,9 +330,15 @@ Boxing and Unboxing both are used for type conversions.
 The process of converting from a value type to a reference type is called boxing. 
 Boxing is an implicit conversion. 
 
-Why do we need boxing and unboxing?
+Why do we need boxing and unboxing? unified type system?
 
-### Default type
+https://stackoverflow.com/questions/2111857/why-do-we-need-boxing-and-unboxing-in-c
+
+### Casting
+
+cast means type conversion, which is not just happened between value type and reference type
+
+### Default values
 
 ```<language>
 int a = default(int)
@@ -339,12 +346,34 @@ int a = default(int)
 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
 
+
+## is VS as
+
+- "is" is used to determine if an object can be cast into some specifc type
+- "as" is I will firstly try to cast into this type, but if fails, I will return null
+
+ref:
+https://stackoverflow.com/questions/3786361/difference-between-is-and-as-keyword
+
+## equals() VS == VS ReferenceEquals
+
+> Equals is an instance method that takes one parameter (which can be null). Since it is an instance method (must be invoked on an actual object), it can't be invoked on a null-reference.
+> 
+> ReferenceEquals is a static method that takes two parameters, either / both of which can be null. Since it is static (not associated with an object instance), it will not throw a NullReferenceException under any circumstances.
+> 
+> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw aNullReferenceExceptioneither
+> 
+
+ref:
+https://stackoverflow.com/questions/3869601/c-sharp-equals-referenceequals-and-operator
+
 ### ref:
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out-parameter-modifier
 https://www.c-sharpcorner.com/UploadFile/ff2f08/ref-vs-out-keywords-in-C-Sharp/ 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/structs
 https://stackoverflow.com/questions/2111857/why-do-we-need-boxing-and-unboxing-in-c
+
 
 
 ## flow control
@@ -459,11 +488,12 @@ https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloa
 
 ### class field initilization
 
-this
+this is mostly used inside the class, which used to indicate the object.
 
 ### defining a Properties: getter and setter
 
-- C# properties are members of a C# class that provide a flexible mechanism to read, write or compute the values of private fields, in other words, by using properties, we can access private fields and set their values. 
+- C# properties are members of a C# class that provide a flexible mechanism to read, write or compute the values of private fields.
+- In other words, by using properties, we can access private fields and set their values. 
 - **Properties in C# are always public data members**. Properties can be used as if they are public data members, but they are actually special methods called accessors.
 - C# properties use get and set methods, also known as accessors, to access and assign values to private fields.
  
@@ -483,7 +513,7 @@ We have three types of properties: Read/Write, ReadOnly, and WriteOnly
 
 
 
-### Constructors
+### defining a Constructors
 
 ```<C#>
 Class Name
@@ -513,9 +543,11 @@ Class Name
 > If you don't provide a constructor for your class, C# creates one by default that instantiates the object and sets member variables to the default values as listed in the Default values of C# types article. If you don't provide a constructor for your struct, 
 > C# relies on an implicit parameterless constructor to automatically initialize each field to its default value. 
 
+Once you declare a constructor, there will be no default parameterless constructor
+
 #### constructor overloading?
 
-To create different constructors
+To create different constructors for different behavior of initiating object.
 
 #### Static Constructor
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors
@@ -523,9 +555,11 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-str
 
 ## C# Class Charcteristics
 
-C# is of course Object-Oriented programming language, which have that three main charateristics:
+C# is of course Object-Oriented Programming language, which have that three main charateristics:
 - Encapsulation:
-  - try to "do not repeat yourself" implementations.  
+  - try to "do not repeat yourself" implementations.
+  - Encapsulation is also about the access control
+    
 - Polymorphism
 - Inheritance
 
@@ -537,8 +571,6 @@ Want to talk about the refactoring a little bit here:
 - Generalize Type -> to generalize a base class. And make fully use of the Polymorphism to override/overload. 
 - Pull up -> to move childrens to parent
 - Push down -> to move parents to childrens
-
-
 
 ### modifiers
 
@@ -553,6 +585,8 @@ Want to talk about the refactoring a little bit here:
 - readonly can be changed via constructor, even during the runtime. As long as you change this in the constructor
 - Constant is nothing but "constant", a variable of which the value is constant but at compile time.It's mandatory to assign a value to it. 
 - By default, a const is static and we cannot change the value of a const variable throughout the entire program.
+
+so a property with only get accessor is inplicitly a readonly member.
 
 https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c
 https://www.c-sharpcorner.com/UploadFile/c210df/difference-between-const-readonly-and-static-readonly-in-C-Sharp/
@@ -575,6 +609,26 @@ A static class:
 - Cannot be instantiated.
 - Is sealed.
 - Cannot contain Instance Constructors. 
+
+### Inheritance,
+
+Inheritance enables you to create new classes that **reuse, extend, and modify** the behavior defined in other classes. 
+The class whose members are inherited is called the base class, and the class that inherits those members is called the derived class. 
+A derived class can have only one direct base class
+
+#### Constructor Chain
+
+> No, you can't override constructors. The concept makes no sense in C#, because constructors simply aren't invoked polymorphically. 
+> You always state which class you're trying to construct, and the arguments to the constructor.
+> 
+> Constructors aren't inherited at all - but all constructors from a derived class must chain either to another constructor in the same class, or to one of the constructors in the base class. 
+> If you don't do this explicitly, the compiler implicitly chains to the parameterless constructor of the base class (and an error occurs if that constructor doesn't exist or is inaccessible).
+> 
+> https://stackoverflow.com/questions/11271920/is-it-possible-to-override-a-constructor-in-c
+
+Constructor chaining is a way to connect two or more classes in a relationship as Inheritance. 
+In Constructor Chaining, every child class constructor is mapped to a parent class Constructor implicitly by base keyword,
+so when you create an instance of the child class, it will call the parent’s class Constructor. Without it, inheritance is not possible
 
 #### Abstract
 
@@ -627,7 +681,7 @@ ref:
 
 https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abstract-method-and-a-virtual-method
 
-### Interface
+#### Interface
 
 - Interface is more common than abstract in daily C# usage
 - Interface defines a contract. Any class or struct that implements that contracts must provide an implementation of the members defines in the interface.
@@ -639,6 +693,7 @@ https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abs
 
 
 #### Abstract VS Interface
+
 - A class can implement any number of interfaces but a subclass can at most use only one abstract class.
 - An abstract class can have non-abstract methods (concrete methods) while in case of interface, all the methods have to be abstract.
 - An abstract class can declare or use any variables while an interface is not allowed to do so.
@@ -647,26 +702,29 @@ https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abs
 - An abstract class can’t be used for multiple inheritance while the interface can be used as multiple inheritance.
 - An abstract class use constructor while in an interface we don’t have any type of constructor.
 
-### Inheritance,
 
-Inheritance enables you to create new classes that **reuse, extend, and modify** the behavior defined in other classes. 
-The class whose members are inherited is called the base class, and the class that inherits those members is called the derived class. 
-A derived class can have only one direct base class
+In C#, when should you use interfaces and when should you use abstract classes? What can be the deciding factor?
 
-
-#### Constructor Chain
-
-> No, you can't override constructors. The concept makes no sense in C#, because constructors simply aren't invoked polymorphically. 
-> You always state which class you're trying to construct, and the arguments to the constructor.
+> The advantages of an abstract class are:
 > 
-> Constructors aren't inherited at all - but all constructors from a derived class must chain either to another constructor in the same class, or to one of the constructors in the base class. 
-> If you don't do this explicitly, the compiler implicitly chains to the parameterless constructor of the base class (and an error occurs if that constructor doesn't exist or is inaccessible).
+> Ability to specify default implementations of methods
+> Added invariant checking to functions
+> Have slightly more control in how the "interface" methods are called
+> Ability to provide behavior related or unrelated to the interface for "free"
 > 
-> https://stackoverflow.com/questions/11271920/is-it-possible-to-override-a-constructor-in-c
+> Interfaces are merely data passing contracts and do not have these features. 
+> However, they are typically more flexible as a type can only be derived from one class, but can implement any number of interfaces.
 
-Constructor chaining is a way to connect two or more classes in a relationship as Inheritance. 
-In Constructor Chaining, every child class constructor is mapped to a parent class Constructor implicitly by base keyword,
-so when you create an instance of the child class, it will call the parent’s class Constructor. Without it, inheritance is not possible
+
+
+> Abstract classes and interfaces are semantically different, although their usage can overlap.
+> 
+> An abstract class is generally used as a building basis for similar classes. Implementation that is common for the classes can be in the abstract class.
+> 
+> An interface is generally used to specify an ability for classes, where the classes doesn't have to be very similar.
+
+https://stackoverflow.com/questions/747517/interfaces-vs-abstract-classes
+
 
 #### overriding
 
