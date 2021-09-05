@@ -10,16 +10,33 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
+            
             #region Leetcode
-            LeetCodeTest();
+            // LeetCodeTest();
             #endregion
 
+            #region sort
+            SortTest();
+            #endregion
         }
 
         static void LeetCodeTest()
         {
             //LeetCodeTest15();
             LeetCodeTest1();
+        }
+
+        static void SortTest()
+        {
+            var srt = new Sort();
+            List<int> nums = new List<int> { 43,1,5,75,87,3,7,56,12,15,99,22,66};
+
+            //srt.BubbleSort(nums);
+            //srt.SelectionSort(nums);
+            //srt.InsertionSort(nums);
+            //nums = srt.MergeSort(nums);
+            srt.QuickSort(nums);
+            Console.WriteLine(nums);
         }
 
         static void LeetCodeTest15()
