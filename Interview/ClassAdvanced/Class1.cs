@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview
+namespace Interview.ClassAdvanced
 {
-    interface IBook
+    class Class1
     {
-        string GetWriter();
     }
 }

@@ -21,71 +21,46 @@ namespace Interview
             #endregion
 
             #region TestReferenceType, ValueType  
-            int val = 2;
-            Console.WriteLine(val);
-            SciFiBook book1 = new SciFiBook("Book1", 20);
-
-            var rvtest = new RefValTest();
-            rvtest.TwoVarCanReferenceSameObject();
-            rvtest.PassByValuesTest();
-            rvtest.CanPassByReferenceTest();
+            ValueRefTypeTest();
             #endregion
 
             #region struct
-            StructTest_Coord test = new StructTest_Coord(2,3);
-            Console.WriteLine(test.X);
-
-            int test2 = 3;
+            StructTest();
 
             #endregion
 
             #region boxing and unboxing
 
-            int anum = 123;
-            Object obj = anum;
-            Console.WriteLine(anum);
-            Console.WriteLine(obj);
-
-
-            Object obj2 = 123;
-            int anum2 = (int)obj2;
-            Console.WriteLine(anum2);
-            Console.WriteLine(obj2);
+            BoxUnboxTest();
 
             #endregion
 
             #region Enum
-            EnumTest et1 = EnumTest.Autumn;
-            EnumTest et2 = EnumTest.Summer;
-            Console.WriteLine(et1);
+            EnumTest();
             #endregion
 
+            // this is regarding type 
             #region is VS as
-
+            IsAsTest();
             #endregion
 
+            //this is regarding object, instance
             #region Equals VS ==
 
             #endregion
+
+            #region Class Basic
+
 
             #region access/modifier
 
             #endregion
 
-           
-
             #region getter and setter
             SciFiBook book3 = new SciFiBook("Book3");
-            Console.WriteLine(book3.name);
-            book3.name = "Book4";
-            Console.WriteLine(book3.name);
-
-            book3.AddComments(3);
-            Console.WriteLine();
-
-            #endregion
-
-            #region abstract Vs virtual
+            Console.WriteLine(book3.Name);
+            book3.Name = "Book4";
+            Console.WriteLine(book3.Name);
 
             #endregion
 
@@ -93,19 +68,26 @@ namespace Interview
 
             #endregion
 
-            #region sealed
-
-            #endregion
-
             #region static
 
             #endregion
 
+            #endregion
+
+            #region Class Advanced
+
+
             #region basic inheritance
+
+            #endregion
+            #region abstract Vs virtual
 
             #endregion
 
             #region Polymorphism
+
+            #endregion
+            #region sealed
 
             #endregion
 
@@ -113,8 +95,7 @@ namespace Interview
             #region inteface
 
             #endregion
-
-
+            #endregion
 
         }
 
@@ -135,7 +116,6 @@ namespace Interview
 
         }
 
-
         static void StatementTest()
         {
             var st = new Statement();
@@ -146,7 +126,62 @@ namespace Interview
             st.SelectTest();
         }
 
+        static void ValueRefTypeTest()
+        {
+            int val = 2;
+            Console.WriteLine(val);
+            SciFiBook book1 = new SciFiBook("Book1");
 
+            var rvtest = new RefValTest();
+            rvtest.TwoVarCanReferenceSameObject();
+            rvtest.PassByValuesTest();
+            rvtest.CanPassByReferenceTest();
+        }
 
+        static void BoxUnboxTest()
+        {
+            // boxing
+            int num = 123;
+            Console.WriteLine(num);
+            Console.WriteLine(num.GetType());
+
+            Object obj = num;
+            Console.WriteLine(obj);
+            Console.WriteLine(obj.GetType());
+
+            // unboxing
+            Object obj2 = "stringtest";
+            int num2 = (int)obj2;
+            string str = (string)obj2;
+
+            Console.WriteLine("unboxing to int {0} and to string {1}", num2, str);
+
+        }
+
+        static void EnumTest()
+        {
+            Season et1 = Season.Autumn;
+            Season et2 = Season.Summer;
+            Console.WriteLine(et2);
+
+            foreach (Month mon in Enum.GetValues(typeof(Month)))
+            {
+                Console.WriteLine(mon);
+            }
+        }
+
+        static void StructTest()
+        {
+            StructTestCoord sttest = new StructTestCoord(2, 3);
+            Console.WriteLine(sttest.X);
+
+        }
+
+        static void IsAsTest()
+        {
+            
+             
+
+        }
     }
 }

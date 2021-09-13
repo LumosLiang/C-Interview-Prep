@@ -43,23 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessTest.cs" />
-    <Compile Include="EnumTest.cs" />
-    <Compile Include="SciFiBook.cs" />
-    <Compile Include="BookBase.cs" />
-    <Compile Include="IBook.cs" />
-    <Compile Include="RootObject.cs" />
+    <Compile Include="ClassAdvanced\Base.cs" />
+    <Compile Include="ClassAdvanced\Class1.cs" />
+    <Compile Include="ClassAdvanced\Interface.cs" />
+    <Compile Include="ConstrChaining.cs" />
+    <Compile Include="EnumLib.cs" />
+    <Compile Include="ClassBasic\SciFiBook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RefValTest.cs" />
     <Compile Include="Statement.cs" />
-    <Compile Include="StructTest_Coord.cs" />
+    <Compile Include="StructTestCoord.cs" />
     <Compile Include="Type.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="donno.md" />
-    <None Include="Summary.md" />
+    <None Include="Summary\donno.md" />
+    <None Include="Summary\Summary.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeetCode\LeetCode.csproj">
@@ -67,5 +67,6 @@
       <Name>LeetCode</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

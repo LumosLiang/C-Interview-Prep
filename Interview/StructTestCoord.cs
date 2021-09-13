@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Interview
 {
-    internal struct StructTest_Coord
+    internal struct StructTestCoord
     {
 
         public double X { get; set; }
         public double Y { get; set; }
 
-        public StructTest_Coord(double x, double y)
+        public StructTestCoord(double x, double y)
         {
             X = x;
             Y = y;

@@ -75,10 +75,10 @@ namespace LeetCode
 
             var start = 0;
             var end = len - 1;
-            var mid = (start + end) / 2 + 1;
+            var mid = (start + end) / 2;
 
-            var left = this.MergeSort(nums.GetRange(0, mid));
-            var right = this.MergeSort(nums.GetRange(mid, len - mid));
+            var left = this.MergeSort(nums.GetRange(0, mid + 1));
+            var right = this.MergeSort(nums.GetRange(mid + 1, len - mid - 1));
 
             return this.Combine(left, right);
         }
@@ -126,7 +126,7 @@ namespace LeetCode
         {
             if (left >= right) return;
             int start = left, end = right;
-            int pivot = nums[(start + end) / 2 + 1];
+            int pivot = nums[(start + end) / 2];
 
             while (start <= end)
             {

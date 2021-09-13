@@ -199,6 +199,7 @@ https://stackoverflow.com/questions/9097994/arent-python-strings-immutable-then-
 This is very different with Python...
 
 ref:
+
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/single-dimensional-arrays
 
 
@@ -243,6 +244,10 @@ A nullable type is a data type is that contains the defined data type or the nul
 This nullable type concept is not compatible with "var".
  
 Any **data type** can be declared **nullable type** with the help of operator "?". 
+
+```<C#>
+int? a = null;
+```
  
 ## hashtable
 
@@ -334,9 +339,6 @@ Why do we need boxing and unboxing? unified type system?
 
 https://stackoverflow.com/questions/2111857/why-do-we-need-boxing-and-unboxing-in-c
 
-### Casting
-
-cast means type conversion, which is not just happened between value type and reference type
 
 ### Default values
 
@@ -347,15 +349,41 @@ int a = default(int)
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
 
 
-## is VS as
+### is VS as
 
-- "is" is used to determine if an object can be cast into some specifc type
+
+> The is operator returns true when an expression result is non-null and any of the following conditions are true:
+> 
+> - The run-time type of an expression result is T.
+> 
+> - The run-time type of an expression result derives from type T, implements interface T, or another implicit reference conversion exists from it to T.
+> 
+> - The run-time type of an expression result is a nullable value type with the underlying type T and the Nullable<T>.HasValue is true.
+> 
+> - A boxing or unboxing conversion exists from the run-time type of an expression result to type T.
+
+
+- "is" is used to determine if an object can be cast into some specifc type. For val type, directly check? if ref type, can check if it is derived class
 - "as" is I will firstly try to cast into this type, but if fails, I will return null
+
+> IS - Is Operator is used to Check the Compatibility of an Object with a given Type and it returns the result as a Boolean (True Or False).
+> 
+> AS - As Operator is used for Casting of Object to a given Type or a Class.
+
+> The as operator explicitly converts the result of an expression to a given reference or nullable value type
+
+
 
 ref:
 https://stackoverflow.com/questions/3786361/difference-between-is-and-as-keyword
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast#code-try-7
 
-## equals() VS == VS ReferenceEquals
+### Casting
+
+cast means type conversion, which is not just happened between value type and reference type
+
+
+### equals() VS == VS ReferenceEquals
 
 > Equals is an instance method that takes one parameter (which can be null). Since it is an instance method (must be invoked on an actual object), it can't be invoked on a null-reference.
 > 
@@ -537,6 +565,25 @@ Class Name
     }
 }
 ```
+#### construtor chaining
+
+- Is this a old fashion way or not? Since we already have the optional parameters
+
+> If you use this technique, you have to be aware that default arguments are set at compile time in the caller, not the callee. 
+> That means if you deploy code like this in a library and an application uses a constructor with default args; you need a re-compile of the application using the library if the default arguments change.
+> Some people consider default arguments in public interfaces inherently dangerous because of this gotcha
+> https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp
+
+- Chaining constructor is in order to reduce code repeat.
+- Chaining constructor use "this(parameter signature)" to chain.
+- The constructor body executed after the chained constructor call. There is no way to call the constructor body first
+
+ref:
+https://www.c-sharpcorner.com/UploadFile/825933/constructor-chaining-in-C-Sharp/
+https://stackoverflow.com/questions/7577627/purpose-of-constructor-chaining
+https://stackoverflow.com/questions/40491161/constructor-chaining-in-c-sharp
+https://stackoverflow.com/questions/45344913/beginner-to-c-how-to-do-constructor-chaining-overriding-and-using-this-ba
+https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp
 
 #### default construtor
 
@@ -545,12 +592,16 @@ Class Name
 
 Once you declare a constructor, there will be no default parameterless constructor
 
-#### constructor overloading?
+#### constructor overloading
 
-To create different constructors for different behavior of initiating object.
+To create different constructors for different behavior of initiating object with different parameter signature.
 
 #### Static Constructor
+
+
+
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors
+
 
 
 ## C# Class Charcteristics
@@ -616,7 +667,7 @@ Inheritance enables you to create new classes that **reuse, extend, and modify**
 The class whose members are inherited is called the base class, and the class that inherits those members is called the derived class. 
 A derived class can have only one direct base class
 
-#### Constructor Chain
+#### Constructor Inheritance
 
 > No, you can't override constructors. The concept makes no sense in C#, because constructors simply aren't invoked polymorphically. 
 > You always state which class you're trying to construct, and the arguments to the constructor.
@@ -691,6 +742,16 @@ https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abs
   - indexers
   - events
 
+**Why we do create object instance from Interface instead of Class?**
+
+
+
+ref:
+https://stackoverflow.com/questions/7716435/why-would-you-declare-an-interface-and-then-instantiate-an-object-with-it-in-jav
+https://stackoverflow.com/questions/16832280/why-we-do-create-object-instance-from-interface-instead-of-class
+https://stackoverflow.com/questions/17290336/what-happens-when-we-create-an-object-of-interface
+https://stackoverflow.com/questions/2186906/creating-objects-from-an-interface-in-c-sharp
+https://stackoverflow.com/questions/7122260/creating-an-instance-of-an-interface
 
 #### Abstract VS Interface
 

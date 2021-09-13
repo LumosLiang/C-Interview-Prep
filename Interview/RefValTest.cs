@@ -19,11 +19,11 @@ namespace Interview
         {
             var book1 = new SciFiBook("book1");
             SetName_ref(ref book1, "book2");
-            Console.WriteLine(book1.name);
+            Console.WriteLine(book1.Name);
 
             SciFiBook book2;
             SetName_out(out book2, "book3");
-            Console.WriteLine(book2.name);
+            Console.WriteLine(book2.Nam);
 
         }
 
@@ -43,9 +43,9 @@ namespace Interview
         {
             var book1 = new SciFiBook("book1");
             SetName_1(book1, "new book1");
-            Console.WriteLine(book1.name);
+            Console.WriteLine(book1.Name);
             SetName_2(book1, "new book2");
-            Console.WriteLine(book1.name);
+            Console.WriteLine(book1.Name);
         }
 
         private static void SetName_2(SciFiBook book, string new_name)
@@ -55,7 +55,7 @@ namespace Interview
 
         private static void SetName_1(SciFiBook book, string new_name)
         {
-            book.name = new_name;
+            book.Name = new_name;
         }
 
         public void TwoVarCanReferenceSameObject()

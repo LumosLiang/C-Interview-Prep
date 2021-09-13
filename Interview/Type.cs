@@ -10,6 +10,18 @@ namespace Interview
 {
     class Type
     {
+
+        public void CharInitialize()
+        {
+            // Initialize a string
+
+            char s = 't';
+            Console.WriteLine(s);
+            string S = s.ToString();
+            Console.WriteLine(S);
+
+        }
+
         public void StringInitialize()
         {
             // Initialize a string
