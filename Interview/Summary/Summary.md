@@ -4,15 +4,22 @@
 
 ## .Net Concept
 
-.net core VS. net framework VS .net standard VS .net SDK
+.net core VS. net framework VS .net standard VS .Net
 
 My understanding:
 - .Net core is cross-platform, open-source, CLI(common line) supported
 - .Net framework is mainly target for windows OS and web development
 - .Net standrad is a interface, a wider, more common library definition. 
   - .Net core and .Net framework are the implemetation of .Net library.
+  - > "In short: to achieve maximum portability, make your library target .NET Standard."
 
-"In short: to achieve maximum portability, make your library target .NET Standard."
+- .Net is the future, which almost includes everything, covering all the advantages of both Framework and Core:
+  - For everything: windows. linux, web, mobile..
+  - Open Source
+  - Support all major platform for Framework, core and Xamarin 
+  - Scalable, fast, and high performance.
+  - Smaller deployment and packages.
+  - Support of the most productive IDEs and tools including Visual Studio, VS Code, VS for Mac, and Command Line Interface (CLI) 
 
 ref:
 
@@ -21,22 +28,23 @@ https://stackoverflow.com/questions/38063837/whats-the-difference-between-net-co
 https://stackoverflow.com/questions/57720865/dot-net-framework-vs-dot-net-core-sdk
 https://stackoverflow.com/questions/44085424/net-standard-vs-net-core
 https://gist.github.com/davidfowl/8939f305567e1755412d6dc0b8baf1b7
+https://www.c-sharpcorner.com/article/future-of-dot-net/
 
 
 ## .Net component
 
 .Net = CLR + FCL + progamming language, + compiler, so complier is not part of .Net.
-> 
-> NET Framework = libraries (FCL, BCL), language compilers (C#, VB.NET) and Common Language Runtime (CLR)
+
+> Back to year 09: T Framework = libraries (FCL, BCL), language compilers (C#, VB.NET) and Common Language Runtime (CLR)
 
 But noted that later, microsoft decoupled the C# compiler, language version, and .NET Framework. So I guess .Net framework
-Only includes Libraries and  CLR.
+Only includes Libraries and  CLR. And complier is integrated with IDE, like VS. 
 
 ### Some terms in .Net
 
 - CLR -> common language runtime -> Runtime, a virtual machine.
 - FCL -> Framework class library -> library
-- BCL -> Base Class library, BCL is includedd in the FCL
+- BCL -> Base Class library, BCL is included in the FCL
 - IL -> immediate language
 - CLS -> Common language Specifications
 - CTS -> Common language Type
@@ -59,7 +67,7 @@ https://www.cnblogs.com/eshizhan/archive/2010/01/26/1657041.html
 
 ### Complier:
 - csc.exe - the obsolete complier
-- roslyn, - the complier API
+  - roslyn, - the complier API
 
 ref:
 
@@ -68,9 +76,15 @@ https://www.cnblogs.com/chucklu/p/11300738.html
 ### complile process
 
 C# source code -> (complied as) CIL(dll, exe) -> (execuated) CLR -> machine code
- 
-ref:
 
+> Compiling Source Code into Managed Module.
+> Combining newly created managed module into the assembly / assemblies.
+> Loading the CLR.
+> Executing the assembly in & by CRL.
+> https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
+
+ref:
+https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
 https://zhuanlan.zhihu.com/p/37146324
 https://www.cnblogs.com/May-day/p/6594574.html
 
@@ -89,14 +103,25 @@ cmd dotnet
 
 ## .net project in IDE
 
-### how complier, CLR, language packed in the IDE
+**how do I know my langauge version:**
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
 
-### how do I know my langauge version, 
+**how do I know CLR version:**
+https://docs.microsoft.com/en-us/dotnet/api/system.environment.version?view=net-5.0
 
-### how do I know CLR version, 
+**how do I know the complier I am using:**
+https://stackoverflow.com/questions/47633139/how-to-determine-c-sharp-compiler-version-in-command-line
 
-###  how do I know the complier I am using
+> The latest C# compiler determines a default language version based on your project's target framework or frameworks. 
+> Visual Studio doesn't provide a UI to change the value, but you can change it by editing the csproj file. 
+> The choice of default ensures that you use the latest language version compatible with your target framework. 
+> You benefit from access to the latest language features compatible with your project's target. 
+> This default choice also ensures you don't use a language that requires types or runtime behavior not available in your target framework. 
+> Choosing a language version newer than the default can cause hard to diagnose compile-time and runtime errors.
 
+complier, lnaguage, .net, their relationship are strictly linked.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
 
 ### project folder
 
@@ -145,7 +170,6 @@ https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-rele
 - **There can only be one entry point in a C# program**
 - The Main method can be declared with or without a string[] parameter that contains **command-line arguments**.
 - Main must be static and it need not be public. 
-
 
 ref:
 
@@ -299,7 +323,7 @@ string is reference type, but it act like a value type
 **Struct**
 - The struct is a value type in C# and it inherits from System.Value Type.
 - Struct is usually used for smaller amounts of data.
-- Struct can’t be inherited from other types. so struct can inherit others, but it can't be inherited by others.
+- Struct can’t be inherited from other types. so **struct can inherit others, but it can't be inherited by others.**
 - A structure can't be abstract.
 - No need to create an object with a **new** keyword.
 - Do not have permission to create any default constructor.
@@ -314,6 +338,8 @@ string is reference type, but it act like a value type
 ### Pass by reference and Pass by value and ref/out
 
 **See demo**
+
+These are based on the fact that method in C# is always, always, always, passing by values by default unless you declare these two keywords.
 
 > ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
 > 
@@ -389,8 +415,7 @@ cast means type conversion, which is not just happened between value type and re
 > 
 > ReferenceEquals is a static method that takes two parameters, either / both of which can be null. Since it is static (not associated with an object instance), it will not throw a NullReferenceException under any circumstances.
 > 
-> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw aNullReferenceExceptioneither
-> 
+> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw aNullReferenceExceptioneither 
 
 ref:
 https://stackoverflow.com/questions/3869601/c-sharp-equals-referenceequals-and-operator
@@ -527,11 +552,11 @@ this is mostly used inside the class, which used to indicate the object.
  
 What are accessors?
  
-The get and set portions or blocks of a property are called accessors. These are useful to restrict the accessibility of a property. 
-The set accessor specifies that we can assign a value to a private field in a property.
-Without the set accessor property, it is like a readonly field. 
-With the 'get' accessor we can access the value of the private field. 
-In other words, it returns a single value. A Get accessor specifies that we can access the value of a field publically.
+- The get and set portions or blocks of a property are called accessors. These are useful to restrict the accessibility of a property. 
+- The set accessor specifies that we can assign a value to a private field in a property.
+- Without the set accessor property, it is like a readonly field. 
+- With the 'get' accessor we can access the value of the private field. 
+- In other words, it returns a single value. A Get accessor specifies that we can access the value of a field publically.
  
 We have three types of properties: Read/Write, ReadOnly, and WriteOnly
  
@@ -626,19 +651,23 @@ Want to talk about the refactoring a little bit here:
 ### modifiers
 
 #### access modifiers
-- public 
-- private
-- internal
-- protected
+
+- public: all
+- private: in the same class
+- internal: in the same assembly
+- protected: in the parent class and derived class
 
 #### readonly, constant
 
-- readonly can be changed via constructor, even during the runtime. As long as you change this in the constructor
+- readonly can be changed via **non-static constructor**, even during the runtime. As long as you change this in the constructor
 - Constant is nothing but "constant", a variable of which the value is constant but at compile time.It's mandatory to assign a value to it. 
 - By default, a const is static and we cannot change the value of a const variable throughout the entire program.
+- **so a property with only get accessor is inplicitly a readonly member.**
 
-so a property with only get accessor is inplicitly a readonly member.
+I think readonly and constant has something in common, where they all expected that the value to be constant to some extent, but readonly means val can be
+mutable but only with the constructor. so looks like after a object is constructed, the value won't change
 
+ref:
 https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c
 https://www.c-sharpcorner.com/UploadFile/c210df/difference-between-const-readonly-and-static-readonly-in-C-Sharp/
 
@@ -742,29 +771,21 @@ https://stackoverflow.com/questions/391483/what-is-the-difference-between-an-abs
   - indexers
   - events
 
-**Why we do create object instance from Interface instead of Class?**
-
-
-
-ref:
-https://stackoverflow.com/questions/7716435/why-would-you-declare-an-interface-and-then-instantiate-an-object-with-it-in-jav
-https://stackoverflow.com/questions/16832280/why-we-do-create-object-instance-from-interface-instead-of-class
-https://stackoverflow.com/questions/17290336/what-happens-when-we-create-an-object-of-interface
-https://stackoverflow.com/questions/2186906/creating-objects-from-an-interface-in-c-sharp
-https://stackoverflow.com/questions/7122260/creating-an-instance-of-an-interface
-
 #### Abstract VS Interface
 
 - A class can implement any number of interfaces but a subclass can at most use only one abstract class.
 - An abstract class can have non-abstract methods (concrete methods) while in case of interface, all the methods have to be abstract.
 - An abstract class can declare or use any variables while an interface is not allowed to do so.
-- In an abstract class, all data members or functions are private by default while in an interface all are public, we can’t change them manually.
+- **In an abstract class, all data members or functions are private by default while in an interface all are public, we can’t change them manually.**
 - In an abstract class, we need to use abstract keywords to declare abstract methods, while in an interface we don’t need to use that.
 - An abstract class can’t be used for multiple inheritance while the interface can be used as multiple inheritance.
 - An abstract class use constructor while in an interface we don’t have any type of constructor.
 
 
 In C#, when should you use interfaces and when should you use abstract classes? What can be the deciding factor?
+
+**Why we do create object instance from Interface instead of Class?**
+
 
 > The advantages of an abstract class are:
 > 
@@ -786,6 +807,13 @@ In C#, when should you use interfaces and when should you use abstract classes? 
 
 https://stackoverflow.com/questions/747517/interfaces-vs-abstract-classes
 
+
+ref:
+https://stackoverflow.com/questions/7716435/why-would-you-declare-an-interface-and-then-instantiate-an-object-with-it-in-jav
+https://stackoverflow.com/questions/16832280/why-we-do-create-object-instance-from-interface-instead-of-class
+https://stackoverflow.com/questions/17290336/what-happens-when-we-create-an-object-of-interface
+https://stackoverflow.com/questions/2186906/creating-objects-from-an-interface-in-c-sharp
+https://stackoverflow.com/questions/7122260/creating-an-instance-of-an-interface
 
 #### overriding
 
@@ -812,10 +840,13 @@ Enum is **value type**
 - You can explicitly specify any other integral numeric type as an underlying type of an enumeration type. 
 - You can also explicitly specify the associated constant values, as the following example shows
 
+An enum is used to create **numeric constants** in the .NET framework. All the members of enum are enum type. There must be a numeric value for each enum type.
+The default underlying type of the enumeration element is int. By default, the first enumerator has the value 0, and the value of each successive enumerator is increased by 1. 
+
 ```<C#>
 enum Season
 {
-    Spring,
+    Spring, # start from 0
     Summer,
     Autumn,
     Winter
@@ -832,7 +863,7 @@ enum Season: short
 }
 ```
 
-**Constants can be referred to in a consistent, expressive and type safe way.**
+**Constants can be referred to in a consistent, expressive and type-safe way.**
 
 ref:
 

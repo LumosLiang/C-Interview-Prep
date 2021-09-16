@@ -46,8 +46,10 @@ namespace Interview
 
             //this is regarding object, instance
             #region Equals VS ==
+            EqualTest();
 
             #endregion
+
 
             #region Class Basic
 
@@ -145,16 +147,23 @@ namespace Interview
             Console.WriteLine(num);
             Console.WriteLine(num.GetType());
 
-            Object obj = num;
-            Console.WriteLine(obj);
-            Console.WriteLine(obj.GetType());
+            object numobj = num;
+            Console.WriteLine(numobj);
+            Console.WriteLine(numobj.GetType());
 
             // unboxing
-            Object obj2 = "stringtest";
+            object obj2 = "stringtest";
             int num2 = (int)obj2;
             string str = (string)obj2;
 
             Console.WriteLine("unboxing to int {0} and to string {1}", num2, str);
+
+            //A boxing conversion makes a copy of the value being boxed 
+            StructTestCoord st = new StructTestCoord(1,1);
+            object sto = st;
+            st.X = 2;
+            Console.WriteLine(st.X);
+            Console.WriteLine(((StructTestCoord)sto).X);
 
         }
 
@@ -182,6 +191,24 @@ namespace Interview
             
              
 
+        }
+
+        static void EqualTest()
+        {
+
+            double e = 2.718281828459045;
+            double d = e;
+            object o1 = e;
+            object o2 = d;
+
+            // check reference
+            Console.WriteLine(o1 == o2);
+
+            // check content
+            Console.WriteLine(o1.Equals(o2));
+
+            // check reference
+            Console.WriteLine(object.ReferenceEquals(o1,o2));
         }
     }
 }

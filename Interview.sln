@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview", "Interview\Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "LeetCode\LeetCode.csproj", "{B70506D5-9250-44E1-B026-3A09BAA8A332}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetStandard", "dotnetStandard\dotnetStandard.csproj", "{5AE787EE-3543-422F-9CCD-B9A3EBBC39FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B70506D5-9250-44E1-B026-3A09BAA8A332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B70506D5-9250-44E1-B026-3A09BAA8A332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B70506D5-9250-44E1-B026-3A09BAA8A332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE787EE-3543-422F-9CCD-B9A3EBBC39FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE787EE-3543-422F-9CCD-B9A3EBBC39FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE787EE-3543-422F-9CCD-B9A3EBBC39FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE787EE-3543-422F-9CCD-B9A3EBBC39FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

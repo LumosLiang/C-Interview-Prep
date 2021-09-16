@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Git.md" />
+    <None Include="LearnSQL.md" />
     <None Include="Summary\donno.md" />
     <None Include="Summary\Summary.md" />
   </ItemGroup>

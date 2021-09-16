@@ -31,7 +31,9 @@ namespace LeetCode
             //LeetCode5Test();
             //LeetCode6Test();
             //LeetCode7Test();
-            LeetCode11Test();
+            //LeetCode11Test();
+            LeetCodeTest21();
+            //LeetCode98Test();
         }
 
         static void SortTest()
@@ -130,6 +132,27 @@ namespace LeetCode
             Leetcode_15_3Sum solution = new Leetcode_15_3Sum();
             int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
             IList<IList<int>> res = solution.ThreeSum(nums);
+            Console.WriteLine(res);
+
+        }
+        static void LeetCodeTest21()
+        {
+            Leetcode_21_Merge_Two_Sorted_Lists solution = new Leetcode_21_Merge_Two_Sorted_Lists();
+
+            ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+            ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+            var res = solution.MergeTwoLists(l1, l2);
+            Console.WriteLine(res);
+
+        }
+
+
+        static void LeetCode98Test()
+        {
+            Leetcode_98_Validate_Binary_Search_Tree solution = new Leetcode_98_Validate_Binary_Search_Tree();
+
+            TreeNode input = new TreeNode(2, new TreeNode(2), new TreeNode(2));
+            var res = solution.IsValidBST(input);
             Console.WriteLine(res);
 
         }

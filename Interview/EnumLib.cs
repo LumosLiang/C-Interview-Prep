@@ -14,7 +14,7 @@ namespace Interview
         Winter = 4
     }
 
-    enum Month
+    enum Month: ushort
     {
         Jan, Feb, March, April, May, Jun, July, Aug, Sept, Oct, Nov, Dec
     }

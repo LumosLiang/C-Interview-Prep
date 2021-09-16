@@ -18,5 +18,21 @@ namespace LeetCode
 
             return -1;
         }
+
+        public int Search2(int[] nums, int target)
+        {
+
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
+            {
+                int mid = left + (right - left) / 2;
+
+                // search the 
+                if (nums[mid] >= target) right = mid;
+                else left = mid + 1;
+            }
+            if (nums[left] != target) return -1;
+            else return left;
+        }
     }
 }
