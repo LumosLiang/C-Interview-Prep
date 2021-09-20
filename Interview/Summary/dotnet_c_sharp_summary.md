@@ -14,7 +14,7 @@ My understanding:
   - > "In short: to achieve maximum portability, make your library target .NET Standard."
 
 - .Net is the future, which almost includes everything, covering all the advantages of both Framework and Core:
-  - For everything: windows. linux, web, mobile..
+  - For everything: windows. linux, web, mobile...
   - Open Source
   - Support all major platform for Framework, core and Xamarin 
   - Scalable, fast, and high performance.
@@ -35,10 +35,11 @@ https://www.c-sharpcorner.com/article/future-of-dot-net/
 
 .Net = CLR + FCL + progamming language, + compiler, so complier is not part of .Net.
 
-> Back to year 09: T Framework = libraries (FCL, BCL), language compilers (C#, VB.NET) and Common Language Runtime (CLR)
+> Back to year 09: .Net Framework? = libraries (FCL, BCL), language compilers (C#, VB.NET) and Common Language Runtime (CLR)
 
-But noted that later, microsoft decoupled the C# compiler, language version, and .NET Framework. So I guess .Net framework
-Only includes Libraries and  CLR. And complier is integrated with IDE, like VS. 
+> But noted that later, microsoft decoupled the C# compiler, language version, and .NET Framework. 
+
+So I guess .Net framework Only includes Libraries and  CLR. And complier is integrated with IDE, like VS. 
 
 ### Some terms in .Net
 
@@ -67,10 +68,9 @@ https://www.cnblogs.com/eshizhan/archive/2010/01/26/1657041.html
 
 ### Complier:
 - csc.exe - the obsolete complier
-  - roslyn, - the complier API
+- roslyn, - the complier API， but looks like roslyn also includes csc.exe
 
 ref:
-
 https://www.cnblogs.com/chucklu/p/11300738.html
 
 ### complile process
@@ -140,7 +140,7 @@ Like in pip in the python, and npm in the js
 
 **Managed Code**
 
-- Managed code is the code that is developed using the .NET framework and its supported programming languages such as C# or VB.NET. 
+- Managed code is the **code that is developed using the .NET framework** and its supported programming languages such as C# or VB.NET. 
 - Managed code is directly executed by the Common Language Runtime (CLR or Runtime) and its lifecycle including object creation, 
 memory allocation, and object disposal is managed by the Runtime. 
 - Any language that is written in .NET Framework is managed code.
@@ -261,17 +261,6 @@ List VS array.
 
 The Parentheses --> ? 
 
-## Nullable
-
-A nullable type is a data type is that contains the defined data type or the null value.
- 
-This nullable type concept is not compatible with "var".
- 
-Any **data type** can be declared **nullable type** with the help of operator "?". 
-
-```<C#>
-int? a = null;
-```
  
 ## hashtable
 
@@ -328,6 +317,9 @@ string is reference type, but it act like a value type
 - No need to create an object with a **new** keyword.
 - Do not have permission to create any default constructor.
 
+> A structure type can't inherit from other class or structure type and it can't be the base of a class. 
+> However, a structure type can implement interfaces.
+
 **Class**
 - The class is a reference type in C# and it inherits from the System.Object Type.
 - Classes are usually used for large amounts of data.
@@ -372,8 +364,23 @@ https://stackoverflow.com/questions/2111857/why-do-we-need-boxing-and-unboxing-i
 int a = default(int)
 ```
 
+Note that this different with Nullable
+
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
 
+
+
+## Nullable
+
+A nullable type is a data type is that contains the defined data type or the null value.
+ 
+This nullable type concept is not compatible with "var".
+ 
+Any **data type** can be declared **nullable type** with the help of operator "?". 
+
+```<C#>
+int? a = null;
+```
 
 ### is VS as
 
