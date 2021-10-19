@@ -26,13 +26,68 @@ namespace LeetCode
             while (left < right)
             {
                 int mid = left + (right - left) / 2;
-
-                // search the 
                 if (nums[mid] >= target) right = mid;
                 else left = mid + 1;
             }
             if (nums[left] != target) return -1;
             else return left;
         }
+
+        public int SearchFirstGreatEqualThan(int[] nums, int target)
+        {
+
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
+            {
+                int mid = left + (right - left) / 2;
+                if (nums[mid] >= target) right = mid;
+                else left = mid + 1;
+            }
+            if (nums[left] != target) return -1;
+            else return left;
+        }
+
+        public int SearchLastSmaller(int[] nums, int target)
+        {
+
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
+            {
+                int mid = left + (right - left) / 2;
+                if (nums[mid] >= target) right = mid;
+                else left = mid + 1;
+            }
+            if (nums[left] != target) return -1;
+            else return left;
+        }
+
+        public int SearchLastSmallEqualThan(int[] nums, int target)
+        {
+
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
+            {
+                int mid = left + (right - left) / 2;
+                if (nums[mid] >= target) right = mid;
+                else left = mid + 1;
+            }
+            if (nums[left] != target) return -1;
+            else return left;
+        }
+
+        public int SearchFirstLarger(int[] nums, int target)
+        {
+
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
+            {
+                int mid = left + (right - left) / 2;
+                if (nums[mid] >= target) right = mid;
+                else left = mid + 1;
+            }
+            if (nums[left] != target) return -1;
+            else return left;
+        }
+
     }
 }

@@ -15,61 +15,100 @@ namespace Interview
 
     class RefValTest
     {
-        public void CanPassByReferenceTest()
-        {
-            var book1 = new SciFiBook("book1");
-            SetName_ref(ref book1, "book2");
-            Console.WriteLine(book1.Name);
-
-            SciFiBook book2;
-            SetName_out(out book2, "book3");
-            Console.WriteLine(book2.Nam);
-
-        }
-
-        private static void SetName_out(out SciFiBook book, string new_name)
-        {
-            book = new SciFiBook(new_name);
-        }
-
-        private static void SetName_ref(ref SciFiBook book, string new_name)
-        {
-            book = new SciFiBook(new_name);
-        }
-
 
         // Always, Always, Always pass by values
-        public void PassByValuesTest()
+        // And this is not related to whether it is value type or a reference type
+
+        // for value type
+        internal void PassByValuesValTest()
         {
-            var book1 = new SciFiBook("book1");
-            SetName_1(book1, "new book1");
-            Console.WriteLine(book1.Name);
-            SetName_2(book1, "new book2");
-            Console.WriteLine(book1.Name);
+            int a = 100;
+            ChangeVal(a);
+            Console.WriteLine(a);
         }
 
-        private static void SetName_2(SciFiBook book, string new_name)
+        private void ChangeVal(int a)
+        {
+            a = 100;
+        }
+
+        // With ref and out keyword's help, we can pass by reference, which is 实参
+        internal void CanPassByReferenceTestVal()
+        {
+            int a = 10;
+            ChangeValRef(ref a);
+            Console.WriteLine(a);
+        }
+
+        private void ChangeValRef(ref int a)
+        {
+            a = 100;
+        }
+
+
+        // for reference type
+
+        public void PassByValuesRefTest()
+        {
+            var book1 = new SciFiBook("book1");
+            SetName(book1, "new book2");
+            Console.WriteLine(book1.Name);
+
+            var book3 = new SciFiBook("book3");
+            SetNameNew(book3, "new book4");
+            Console.WriteLine(book3.Name);
+        }
+
+        private static void SetNameNew(SciFiBook book, string new_name)
         {
             book = new SciFiBook(new_name);
         }
 
-        private static void SetName_1(SciFiBook book, string new_name)
+        private static void SetName(SciFiBook book, string new_name)
         {
             book.Name = new_name;
         }
 
+        public void CanPassByReferenceTestRef()
+        {
+            var book1 = new SciFiBook("book1");
+            SetNameRef(ref book1, "book2");
+            Console.WriteLine(book1.Name);
+
+            SetNameOut(out SciFiBook book2, "book3");
+            Console.WriteLine(book2.Name);
+
+        }
+
+        // Note that out is used when you expected to return something in the invoking method
+        // And out does not care whether the passed argument is initialize or not, it anyway must be initialized in the method.
+        private static void SetNameOut(out SciFiBook book, string new_name)
+        {
+            book = new SciFiBook(new_name);
+        }
+
+        private static void SetNameRef(ref SciFiBook book, string newname)
+        {
+            book.Name = newname;
+        }
+
+
+
+
+
+        // This is jsut to test whether two var can referenece the same object
         public void TwoVarCanReferenceSameObject()
         {
             var book1 = new SciFiBook("book1");
             var book2 = book1;
 
-            Console.WriteLine(book2.name);
+            Console.WriteLine(book2.Name);
             Console.WriteLine(ReferenceEquals(book1, book2));
 
-            book2.name = "book2";
-            Console.WriteLine(book1.name);
+            book2.Name = "book2";
+            Console.WriteLine(book1.Name);
             Console.WriteLine(ReferenceEquals(book1, book2));
-            Console.WriteLine();
         }
+
     }
 }

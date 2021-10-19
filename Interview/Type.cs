@@ -28,6 +28,7 @@ namespace Interview
 
             string s = "test";
             Console.WriteLine(s);
+
             s += "ABC";
             Console.WriteLine(s);
 
@@ -53,7 +54,8 @@ namespace Interview
 
             int[] array = new int[5];
             int[] array_a = new int[5] { 1, 2, 3, 4, 5 };
-            int[] array_inf = new int[] { };
+            int[] array_dyn = new int[] { };
+            
 
             int[] array_b = new int[3] { 1,2,3};
             array_b.Append(3);
@@ -64,6 +66,7 @@ namespace Interview
             int[,] array_2d = new int[,] { { 1 }, { 2 } };
             int[,] array_2da = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
             int[,,] array_3d = new int[,,] { { { }, { } }, { { }, { } } };
+            
 
             // Jagged array
             int[][] jagged_arr = new int[2][];
@@ -73,6 +76,11 @@ namespace Interview
                 new int[]{ 4,5,6},
                 new int[]{7,8,9,10},
             };
+
+            // multi-array + jagged
+
+            int[][,] c = new int[5][,];
+            c[0] = new int[2,2] { { 1,2},{3,4 } };
 
         }
 
@@ -134,7 +142,7 @@ namespace Interview
                 { "bmp", "paint.exe"},
                 { "dib", "paint.exe"},
             };
-            var member = dict_test["text"];
+            var member = dict_test["txt"];
         }
 
         internal void TupleInitialize()

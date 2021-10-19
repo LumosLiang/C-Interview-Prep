@@ -13,11 +13,11 @@ namespace Interview
         static void Main(string[] args)
         {
             #region Type
-            TypeTest();
+            //TypeTest();
             #endregion
 
             #region Statement 
-            StatementTest();
+            //StatementTest();
             #endregion
 
             #region TestReferenceType, ValueType  
@@ -130,14 +130,12 @@ namespace Interview
 
         static void ValueRefTypeTest()
         {
-            int val = 2;
-            Console.WriteLine(val);
-            SciFiBook book1 = new SciFiBook("Book1");
-
             var rvtest = new RefValTest();
             rvtest.TwoVarCanReferenceSameObject();
-            rvtest.PassByValuesTest();
-            rvtest.CanPassByReferenceTest();
+            rvtest.PassByValuesValTest();
+            rvtest.PassByValuesRefTest();
+            rvtest.CanPassByReferenceTestVal();
+            rvtest.CanPassByReferenceTestRef();
         }
 
         static void BoxUnboxTest()

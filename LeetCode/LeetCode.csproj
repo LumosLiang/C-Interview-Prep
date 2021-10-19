@@ -48,6 +48,7 @@
     <Compile Include="LeetCode Solutions\Leetcode_12_Integer_to_Roman.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_13_Roman_to_Integer.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_14_Longest_Common_Prefix.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_278_First_Bad_Version.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_21_Merge_Two_Sorted_Lists.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_96_Unique_Binary_Search_Trees.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal.cs" />

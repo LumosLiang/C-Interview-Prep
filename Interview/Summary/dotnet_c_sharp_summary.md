@@ -7,7 +7,7 @@
 .net core VS. net framework VS .net standard VS .Net
 
 My understanding:
-- .Net core is cross-platform, open-source, CLI(common line) supported
+- .Net core is cross-platform, open-source, CLI(command-line interface) supported
 - .Net framework is mainly target for windows OS and web development
 - .Net standrad is a interface, a wider, more common library definition. 
   - .Net core and .Net framework are the implemetation of .Net library.
@@ -41,8 +41,7 @@ https://www.c-sharpcorner.com/article/future-of-dot-net/
 
 So I guess .Net framework Only includes Libraries and  CLR. And complier is integrated with IDE, like VS. 
 
-### Some terms in .Net
-
+### Some terms in 
 - CLR -> common language runtime -> Runtime, a virtual machine.
 - FCL -> Framework class library -> library
 - BCL -> Base Class library, BCL is included in the FCL
@@ -83,9 +82,19 @@ C# source code -> (complied as) CIL(dll, exe) -> (execuated) CLR -> machine code
 > Executing the assembly in & by CRL.
 > https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
 
+
+- source code is complied in managed module. 
+  - Suppose if we create a console application & compile it then it creates .exe file. If we create web application & compile it then it creates .dll files
+- Managed module is standard windows Portable Executable (PE) file
+- combining newly created managed module into the assembly
+- Executing the assembly in & by CLR
+
 ref:
+
 https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
+
 https://zhuanlan.zhihu.com/p/37146324
+
 https://www.cnblogs.com/May-day/p/6594574.html
 
 ## command line
@@ -119,7 +128,7 @@ https://stackoverflow.com/questions/47633139/how-to-determine-c-sharp-compiler-v
 > This default choice also ensures you don't use a language that requires types or runtime behavior not available in your target framework. 
 > Choosing a language version newer than the default can cause hard to diagnose compile-time and runtime errors.
 
-complier, lnaguage, .net, their relationship are strictly linked.
+complier, language, .net, their relationship are strictly linked.
 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
 
@@ -141,7 +150,7 @@ Like in pip in the python, and npm in the js
 **Managed Code**
 
 - Managed code is the **code that is developed using the .NET framework** and its supported programming languages such as C# or VB.NET. 
-- Managed code is directly executed by the Common Language Runtime (CLR or Runtime) and its lifecycle including object creation, 
+- Managed code is **directly executed** by the Common Language Runtime (CLR or Runtime) and its lifecycle including object creation, 
 memory allocation, and object disposal is managed by the Runtime. 
 - Any language that is written in .NET Framework is managed code.
  
@@ -162,7 +171,7 @@ https://www.wintellect.com/pdb-files-what-every-developer-must-know/
 https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019
 
 
-# C# Syntax
+# C# Basic Syntax
 
 ## main() method
 - The Main method is the entry point of the C# application.
@@ -214,9 +223,9 @@ https://stackoverflow.com/questions/9097994/arent-python-strings-immutable-then-
     float[] numbers = new float[]{1.1,2.2,3.3};
     var numbers = new[]{1,2,3,4};
 
-- array can be fixed or dynamic
-- can initiate single, multil dimension arrays 
-- can define jagged array, which is array in clude array
+- array can be fixed or dynamic. You can even change a dynamic array to static after it is defined.
+- can initiate single, multi-dimension arrays 
+- can define jagged array, which is array include array
 - array has several ways to be initiated. The default value of array depends on the member type, if it is value type, its 0; if ref type, then it is null
 - array is a reference type itself, array is a class, method like append, sort, binarysearch are all included
 
@@ -226,6 +235,14 @@ ref:
 
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/single-dimensional-arrays
 
+#### jagged array and multi-dimensional array difference
+
+
+
+A jagged array is an array-of-arrays, so an int[][] is an array of int[], each of which can be of different lengths and occupy their own block in memory. 
+A multidimensional array (int[,]) is a single block of memory (essentially a matrix).
+
+https://stackoverflow.com/questions/4648914/why-we-have-both-jagged-array-and-multidimensional-array
 
 #### copyto() and clone()
 
@@ -245,8 +262,9 @@ https://stackoverflow.com/questions/198496/difference-between-the-system-array-c
 ## List
 
     List<int> numbers = new List<int>();
-    var numbers = new List<double>(){1.1, 1.2, 1.3};
-
+    List<int> numbers = new List<int>(20);
+    List<int> numbers = new List<int>(IEnumerable<T>);
+    var numbers = new List<double>{1.1, 1.2, 1.3}; # this is actually called collection initializer
 
 List VS array.
 
@@ -260,27 +278,33 @@ List VS array.
 
 
 The Parentheses --> ? 
-
+https://stackoverflow.com/questions/39548446/c-sharp-list-definition-parentheses-vs-curly-braces
  
 ## hashtable
 
 - key/value pair acheived through hash algorithm
-- Dictionary implementation in the .net is based on the Hashtable
+- Dictionary implementation in the .Net is based on the Hashtable
 
 > The generic Dictionary was copied from Hashtable's source
 
-ref: https://stackoverflow.com/questions/301371/why-is-dictionary-preferred-over-hashtable-in-c
+ref: 
+https://stackoverflow.com/questions/301371/why-is-dictionary-preferred-over-hashtable-in-c
 
+https://docs.microsoft.com/zh-cn/archive/blogs/ericlippert/ambiguous-optional-parentheses-part-one
 
 ## Generics
 
 - Can hold different type of object
 - No casting
+- no boxing and unboxing
 - Type safe
 - Better performance
 
-ref:
+> You could use the ArrayList class, but the downside is that it's containing type is an object. So when you'd iterate over the list, 
+> you'd have to cast every item to its correct type (either string or Animal) which is more code and has a performance penalty. 
+> Plus, since an ArrayList holds objects, it isn't type-safe.
 
+ref:
 Why Should I use generics? Why it is good
 https://stackoverflow.com/questions/3606595/understanding-c-sharp-generics-much-better/3606655
 
@@ -298,10 +322,9 @@ You are using what is Known as the reference type.
 
 The value type varible holds itself
 
-
     var b = 3;
 
-When you work with Int, float, doubles..., you are working with the value type
+When you work with int, float, doubles..., you are working with the value type
 
 A method to differentiate a valye type object and a reference type object is to check it is a struct or a class
 
@@ -312,10 +335,10 @@ string is reference type, but it act like a value type
 **Struct**
 - The struct is a value type in C# and it inherits from System.Value Type.
 - Struct is usually used for smaller amounts of data.
-- Struct can’t be inherited from other types. so **struct can inherit others, but it can't be inherited by others.**
+- Struct can’t be inherited from other types. But **struct can inherit others, but it can't be inherited by others.**
 - A structure can't be abstract.
 - No need to create an object with a **new** keyword.
-- Do not have permission to create any default constructor.
+- **Do not have permission to create any default constructor.**
 
 > A structure type can't inherit from other class or structure type and it can't be the base of a class. 
 > However, a structure type can implement interfaces.
@@ -327,24 +350,28 @@ string is reference type, but it act like a value type
 - A class can be an abstract type.
 - We can create a default constructor.
 
-### Pass by reference and Pass by value and ref/out
+### Pass by reference and Pass by value 
 
 **See demo**
 
 These are based on the fact that method in C# is always, always, always, passing by values by default unless you declare these two keywords.
 
+pass by reference and pass by value is totally different with referece types. it is all about parameter(形参) and argument(实参).
+
+**ref/out** 
+
 > ref tells the compiler that the object is initialized before entering the function, while out tells the compiler that the object will be initialized inside the function.
-> 
 > So while **ref is two-ways, out is out-only.**
 
-so ref must be initialized before entering the method, and does not have to be initiated or re-assigned before leaving the calling method;
-while out does not have to be initiated before entering, but must be initiated or assigned a value before leaving
+so **ref** must be initialized before entering the method, and does not have to be initiated or re-assigned before leaving the calling method;
+while **out** does not have to be initiated before entering, but must be initiated or assigned a value before leaving
 
-That is why ref is useful when method wants to changing sth; while out is useful when method wants to return multiple outputs
+That is why **ref** is useful when method wants to changing sth; while out is useful when method wants to **return** multiple outputs
 
 ref:
 https://stackoverflow.com/questions/388464/whats-the-difference-between-the-ref-and-out-keywords
-
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref#passing-an-argument-by-reference
+**https://segmentfault.com/a/1190000016773324**
 
 ### boxing and unboxing
 
@@ -367,7 +394,6 @@ int a = default(int)
 Note that this different with Nullable
 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
-
 
 
 ## Nullable
@@ -406,15 +432,16 @@ int? a = null;
 > The as operator explicitly converts the result of an expression to a given reference or nullable value type
 
 
-
 ref:
 https://stackoverflow.com/questions/3786361/difference-between-is-and-as-keyword
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast#code-try-7
 
 ### Casting
 
-cast means type conversion, which is not just happened between value type and reference type
+cast means type conversion, 
+casting is different with boxing and unboxing
 
+https://stackoverflow.com/questions/1085144/what-is-the-difference-between-boxing-unboxing-and-type-casting
 
 ### equals() VS == VS ReferenceEquals
 
@@ -422,7 +449,7 @@ cast means type conversion, which is not just happened between value type and re
 > 
 > ReferenceEquals is a static method that takes two parameters, either / both of which can be null. Since it is static (not associated with an object instance), it will not throw a NullReferenceException under any circumstances.
 > 
-> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw aNullReferenceExceptioneither 
+> == is an operator, that, in this case (object), behaves identically to ReferenceEquals. It will not throw a NullReferenceException either 
 
 ref:
 https://stackoverflow.com/questions/3869601/c-sharp-equals-referenceequals-and-operator
@@ -433,7 +460,6 @@ https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out-p
 https://www.c-sharpcorner.com/UploadFile/ff2f08/ref-vs-out-keywords-in-C-Sharp/ 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/structs
 https://stackoverflow.com/questions/2111857/why-do-we-need-boxing-and-unboxing-in-c
-
 
 
 ## flow control
@@ -520,8 +546,8 @@ return: very typically used in function that need to return values.
 
 **method overloading is the common way of implementing polymorphism**
 
-- method signature, name, and parameter(order, name, type)
-- method overload
+- method signature, name, and parameter(order, name, return type)
+
 
 ref:
 https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading
@@ -597,25 +623,7 @@ Class Name
     }
 }
 ```
-#### construtor chaining
 
-- Is this a old fashion way or not? Since we already have the optional parameters
-
-> If you use this technique, you have to be aware that default arguments are set at compile time in the caller, not the callee. 
-> That means if you deploy code like this in a library and an application uses a constructor with default args; you need a re-compile of the application using the library if the default arguments change.
-> Some people consider default arguments in public interfaces inherently dangerous because of this gotcha
-> https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp
-
-- Chaining constructor is in order to reduce code repeat.
-- Chaining constructor use "this(parameter signature)" to chain.
-- The constructor body executed after the chained constructor call. There is no way to call the constructor body first
-
-ref:
-https://www.c-sharpcorner.com/UploadFile/825933/constructor-chaining-in-C-Sharp/
-https://stackoverflow.com/questions/7577627/purpose-of-constructor-chaining
-https://stackoverflow.com/questions/40491161/constructor-chaining-in-c-sharp
-https://stackoverflow.com/questions/45344913/beginner-to-c-how-to-do-constructor-chaining-overriding-and-using-this-ba
-https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp
 
 #### default construtor
 
@@ -634,7 +642,26 @@ To create different constructors for different behavior of initiating object wit
 
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors
 
+#### construtor chaining
 
+
+- Is this a old fashion way or not? Since we already have the optional parameters
+
+> If you use this technique, you have to be aware that default arguments are set at compile time in the caller, not the callee. 
+> That means if you deploy code like this in a library and an application uses a constructor with default args; you need a re-compile of the application using the library if the default arguments change.
+> Some people consider default arguments in public interfaces inherently dangerous because of this gotcha
+> https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp
+
+- Chaining constructor is in order to reduce code repeat.
+- Chaining constructor use "this(parameter signature)" to chain.
+- The constructor body executed after the chained constructor call. There is no way to call the constructor body first
+
+ref:
+https://www.c-sharpcorner.com/UploadFile/825933/constructor-chaining-in-C-Sharp/
+https://stackoverflow.com/questions/7577627/purpose-of-constructor-chaining
+https://stackoverflow.com/questions/40491161/constructor-chaining-in-c-sharp
+https://stackoverflow.com/questions/45344913/beginner-to-c-how-to-do-constructor-chaining-overriding-and-using-this-ba
+https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp
 
 ## C# Class Charcteristics
 

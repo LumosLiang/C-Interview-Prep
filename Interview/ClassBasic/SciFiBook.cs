@@ -16,7 +16,13 @@ namespace Interview
         //        Constructors
         //        Events
 
-        internal string Name { get; set; }
+        private string name;
+        
+        internal string Name 
+        {
+            get { return name; }
+            set { name = value; } 
+        }
 
         //internal string Name{get;} this is readonly
 
@@ -28,20 +34,17 @@ namespace Interview
 
       
 
-        internal SciFiBook(string name)
-        {
-            Name = name;
+        internal SciFiBook(string name): this(name, string.Empty)
+        { 
         }
 
-        internal SciFiBook(string name, string writer)
+        internal SciFiBook(string name, string writer): this(name, writer, string.Empty, default)
         {
-            Name = name;
-            Writer = writer;
         }
 
         internal SciFiBook(string name, string writer, string timedimension, double price)
         {
-            Name = name;
+            this.name = name;
             Writer = writer;
             TimeDimension = timedimension;
             Price = price;
