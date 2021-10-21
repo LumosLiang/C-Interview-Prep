@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 
 namespace LeetCode
@@ -17,10 +18,9 @@ namespace LeetCode
                 }
                 else
                 {
-                    hash.Add(target - nums[i], i);
+                    if (!hash.ContainsKey(target - nums[i])) hash.Add(target - nums[i], i);
                 }
             }
-
             return new int[2];
         }
     }

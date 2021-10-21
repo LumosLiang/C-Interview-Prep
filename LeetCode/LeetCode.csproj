@@ -48,8 +48,14 @@
     <Compile Include="LeetCode Solutions\Leetcode_12_Integer_to_Roman.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_13_Roman_to_Integer.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_14_Longest_Common_Prefix.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_189_Rotate_Array.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_1_TwoSum - Copy.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_283_Move_Zeroes.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_278_First_Bad_Version.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_21_Merge_Two_Sorted_Lists.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_35_Search_Insert_Position - Copy.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_88_Merge_Sorted_Array.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_977_Squares_of_a_Sorted_Array.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_96_Unique_Binary_Search_Trees.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_53_Maximum_Subarray.cs" />

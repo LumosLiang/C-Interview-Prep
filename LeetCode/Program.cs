@@ -32,9 +32,13 @@ namespace LeetCode
             //LeetCode6Test();
             //LeetCode7Test();
             //LeetCode11Test();
-            LeetCodeTest21();
+            //LeetCodeTest21();
+            //LeetCodeTest53();
+            LeetCodeTest88();
             //LeetCode98Test();
         }
+
+
 
         static void SortTest()
         {
@@ -53,8 +57,8 @@ namespace LeetCode
         static void LeetCode1Test()
         {
             Leetcode_1_TwoSum solution = new Leetcode_1_TwoSum();
-            int[] nums = new int[] { 2, 7, 11, 15 };
-            var res = solution.TwoSum(nums, 9);
+            int[] nums = new int[] { 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1 };
+            var res = solution.TwoSum(nums, 11);
             Console.WriteLine(res);
 
         }
@@ -146,6 +150,19 @@ namespace LeetCode
 
         }
 
+        static void LeetCodeTest53()
+        {
+            Leetcode_53_Maximum_Subarray solution = new Leetcode_53_Maximum_Subarray();
+            var res = solution.MaxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+            Console.WriteLine(res);
+
+        }
+
+        static void LeetCodeTest88()
+        {
+            Leetcode_88_Merge_Sorted_Array solution = new Leetcode_88_Merge_Sorted_Array();
+            solution.Merge(new int[] { 1, 2, 3, 0, 0, 0 }, 3, new int[] { 2, 5, 6 }, 3);
+        }
 
         static void LeetCode98Test()
         {
