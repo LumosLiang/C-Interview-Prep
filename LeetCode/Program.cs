@@ -34,11 +34,33 @@ namespace LeetCode
             //LeetCode11Test();
             //LeetCodeTest21();
             //LeetCodeTest53();
-            LeetCodeTest88();
+            //LeetCodeTest88();
             //LeetCode98Test();
+            //LeetCode118Test();
+            //LeetCode509Test();
+            //LeetCode557Test();
+            LeetCode746Test();
         }
 
+        private static void LeetCode746Test()
+        {
+            Leetcode_746_Min_Cost_Climbing_Stairs solution = new Leetcode_746_Min_Cost_Climbing_Stairs();
+            var res = solution.MinCostClimbingStairs(new int[] { 10, 15}); 
+        }
 
+        private static void LeetCode509Test()
+        {
+            Leetcode_509_Fibonacci_Number solution = new Leetcode_509_Fibonacci_Number();
+            var res = solution.Fib(3);
+
+        }
+
+        static void LeetCode118Test()
+        {
+            Leetcode_118_Pascal_Triangle solution = new Leetcode_118_Pascal_Triangle();
+            var res = solution.Generate(3);
+            Console.WriteLine(res);
+        }
 
         static void SortTest()
         {
@@ -170,6 +192,15 @@ namespace LeetCode
 
             TreeNode input = new TreeNode(2, new TreeNode(2), new TreeNode(2));
             var res = solution.IsValidBST(input);
+            Console.WriteLine(res);
+
+        }
+
+        static void LeetCode557Test()
+        {
+            Leetcode_557_Reverse_Words_in_a_String_III solution = new Leetcode_557_Reverse_Words_in_a_String_III();
+
+            var res = solution.ReverseWords("Let's take LeetCode contest");
             Console.WriteLine(res);
 
         }
