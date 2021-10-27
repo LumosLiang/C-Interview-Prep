@@ -13,3 +13,7 @@ jagged array的 initialize
 IList
 
 https://docs.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance
+
+array initiate matrix真的是垃圾啊 没有别的方法了吗?
+
+C# 注意 慎用 int.maxvalue或者 int.minvalue 注意结合边界条件

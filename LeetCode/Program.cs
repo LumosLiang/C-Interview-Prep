@@ -32,6 +32,7 @@ namespace LeetCode
             //LeetCode6Test();
             //LeetCode7Test();
             //LeetCode11Test();
+            LeetCode36Test();
             //LeetCodeTest21();
             //LeetCodeTest53();
             //LeetCodeTest88();
@@ -39,7 +40,69 @@ namespace LeetCode
             //LeetCode118Test();
             //LeetCode509Test();
             //LeetCode557Test();
-            LeetCode746Test();
+            //LeetCode242Test();
+            //LeetCode567Test();
+            LeetCode733Test();
+            //LeetCode746Test();
+        }
+
+        private static void LeetCode733Test()
+        {
+            int[][] test = new int[2][];
+            test[0] = new int[] { 0, 0, 0 };
+            test[1] = new int[] { 0, 1, 1 };
+            
+
+            Leetcode_733_Flood_Fill solution = new Leetcode_733_Flood_Fill();
+            var res = solution.FloodFill(test, 1, 1, 1);
+            Console.WriteLine(res);
+
+        }
+
+        private static void LeetCode36Test()
+        {
+
+            char[][] test = new char[9][];
+            test[0] = new char[] { '.', '.', '4', '.', '.', '.', '6', '3', '.' };
+            test[1] = new char[] { '.', '.', '.', '.', '.', '.', '.', '.', '.' };
+            test[2] = new char[] { '5', '.', '.', '.', '.', '.', '.', '9', '.' };
+            test[3] = new char[] { '.', '.', '.', '5', '6', '.', '.', '.', '.' };
+            test[4] = new char[] { '4', '.', '3', '.', '.', '.', '.', '.', '1' };
+            test[5] = new char[] { '.', '.', '.', '7', '.', '.', '.', '.', '.' };
+            test[6] = new char[] { '.', '.', '.', '5', '.', '.', '.', '.', '.' };
+            test[7] = new char[] { '.', '.', '.', '.', '.', '.', '.', '.', '.' };
+            test[8] = new char[] { '.', '.', '.', '.', '.', '.', '.', '.', '.' };
+
+
+            char[,] test1 = new char[9, 9] 
+            { 
+                { '.', '.', '4', '.', '.', '.', '6', '3', '.' },
+                { '.', '.', '.', '.', '.', '.', '.', '.', '.' },
+                { '5', '.', '.', '.', '.', '.', '.', '9', '.' },
+                { '.', '.', '.', '5', '6', '.', '.', '.', '.' },
+                { '4', '.', '3', '.', '.', '.', '.', '.', '1' },
+                { '.', '.', '.', '7', '.', '.', '.', '.', '.' },
+                { '.', '.', '.', '5', '.', '.', '.', '.', '.' },
+                { '.', '.', '.', '.', '.', '.', '.', '.', '.' },
+                { '.', '.', '.', '.', '.', '.', '.', '.', '.' },
+            };
+                
+
+            Leetcode_36_Valid_Sudoku solution = new Leetcode_36_Valid_Sudoku();
+            var res = solution.IsValidSudoku(test);
+            Console.WriteLine(res);
+        }
+
+        private static void LeetCode242Test()
+        {
+            Leetcode_242_Valid_Anagram solution = new Leetcode_242_Valid_Anagram();
+            var res = solution.IsAnagram("anagram", "nagaram");
+        }
+
+        private static void LeetCode567Test()
+        {
+            Leetcode_567_Permutation_in_String solution = new Leetcode_567_Permutation_in_String();
+            var res = solution.CheckInclusion("adc", "dcda");
         }
 
         private static void LeetCode746Test()

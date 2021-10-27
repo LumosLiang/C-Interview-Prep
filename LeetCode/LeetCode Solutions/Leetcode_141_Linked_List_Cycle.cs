@@ -1,8 +1,11 @@
+
+using System.Collections.Generic;
+
 namespace LeetCode
 {
-    public class Leetcode_876_Middle_Of_The_Linked_List
+    public class Leetcode_141_Linked_List_Cycle
     {
-        public ListNode MiddleNode(ListNode head)
+        public bool HasCycle(ListNode head)
         {
             ListNode slow = head, fast = head;
 
@@ -10,9 +13,11 @@ namespace LeetCode
             {
                 slow = slow.next;
                 fast = fast.next.next;
+                if (slow == fast) return true;
             }
-            return slow;
 
+            return false;
         }
     }
 }
+
