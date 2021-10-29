@@ -13,7 +13,7 @@ namespace LeetCode
             if (ransomNote.Length > magazine.Length) return false;
 
             Dictionary<int, int> criteria = new Dictionary<int, int>();
-            int cnt = 0;
+            
 
             foreach (char c in magazine)
             {

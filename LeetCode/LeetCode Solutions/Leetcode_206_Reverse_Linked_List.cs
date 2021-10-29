@@ -5,8 +5,7 @@ namespace LeetCode
         // recursive
         public ListNode ReverseList(ListNode head)
         {
-            if (head == null) return null;
-            if (head.next == null) return head;
+            if (head == null || head.next == null) return head; 
 
             ListNode r = ReverseList(head.next);
             head.next.next = head;

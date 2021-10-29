@@ -32,18 +32,26 @@ namespace LeetCode
             //LeetCode6Test();
             //LeetCode7Test();
             //LeetCode11Test();
-            LeetCode36Test();
+            //LeetCode36Test();
             //LeetCodeTest21();
             //LeetCodeTest53();
             //LeetCodeTest88();
             //LeetCode98Test();
             //LeetCode118Test();
+            LeetCode145Test();
             //LeetCode509Test();
             //LeetCode557Test();
             //LeetCode242Test();
             //LeetCode567Test();
-            LeetCode733Test();
+            //LeetCode733Test();
             //LeetCode746Test();
+        }
+
+        private static void LeetCode145Test()
+        {
+            TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+            TreeTraversal solution = new TreeTraversal();
+            var res = solution.PostorderTraversalDFS(root);
         }
 
         private static void LeetCode733Test()
@@ -230,7 +238,8 @@ namespace LeetCode
 
             ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
             ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-            var res = solution.MergeTwoLists(l1, l2);
+            var res = solution.MergeTwoLists1(l1, l2);
+            var res2 = solution.MergeTwoLists2(l1, l2);
             Console.WriteLine(res);
 
         }

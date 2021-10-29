@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
+
 
 namespace LeetCode
 {
@@ -13,7 +13,7 @@ namespace LeetCode
             var queue = new Queue<TreeNode>();
             queue.Enqueue(root);
 
-            while (queue.Any())
+            while (queue.Count != 0)
             {
                 var size = queue.Count;
                 var oneResult = new List<int>();

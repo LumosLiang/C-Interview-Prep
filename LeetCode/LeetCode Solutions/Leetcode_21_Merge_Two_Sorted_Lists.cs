@@ -6,7 +6,7 @@ namespace LeetCode
     public class Leetcode_21_Merge_Two_Sorted_Lists
     {
 
-        public ListNode MergeTwoLists(ListNode A, ListNode B)
+        public ListNode MergeTwoLists1(ListNode A, ListNode B)
         {
             if (A == null) return B;
             if (B == null) return A;
@@ -34,7 +34,24 @@ namespace LeetCode
 
             return dummy.next;
         }
-   
+
+        public ListNode MergeTwoLists2(ListNode A, ListNode B)
+        {
+            if (A == null) return B;
+            if (B == null) return A;
+
+            if (A.val < B.val)
+            {
+                A.next = MergeTwoLists2(A.next, B);
+                return A;
+            }
+            else
+            {
+                B.next = MergeTwoLists2(B.next, A);
+                return B;
+            }
+        }
+
     }
 }
 

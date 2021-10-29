@@ -24,4 +24,7 @@ namespace LeetCode
             children = _children;
         }
     }
+
+  
 }
+
