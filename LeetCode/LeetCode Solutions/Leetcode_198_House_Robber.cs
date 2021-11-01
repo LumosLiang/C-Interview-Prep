@@ -21,6 +21,25 @@ namespace LeetCode
 
             return dp[nums.Length - 1];
         }
+
+        public int Rob2(int[] nums)
+        {
+            if (nums.Length == 1) return nums[0];
+            if (nums.Length == 2) return Math.Max(nums[0], nums[1]);
+
+            int prepre = nums[0],
+                pre = Math.Max(prepre, nums[1]),
+                curr = 0;
+
+            for (int i = 2; i < nums.Length; i++)
+            {
+                curr = Math.Max(nums[i] + prepre, pre);
+                prepre = pre;
+                pre = curr;
+            }
+
+            return curr;
+        }
     }
 }
 

@@ -35,10 +35,11 @@ namespace LeetCode
             //LeetCode36Test();
             //LeetCodeTest21();
             //LeetCodeTest53();
+            LeetCodeTest77();
             //LeetCodeTest88();
             //LeetCode98Test();
             //LeetCode118Test();
-            LeetCode145Test();
+            //LeetCode145Test();
             //LeetCode509Test();
             //LeetCode557Test();
             //LeetCode242Test();
@@ -47,10 +48,17 @@ namespace LeetCode
             //LeetCode746Test();
         }
 
+        private static void LeetCodeTest77()
+        {
+            BackTrackSolutions solution = new BackTrackSolutions();
+            var res = solution.Combine(4, 2);
+            
+        }
+
         private static void LeetCode145Test()
         {
             TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
-            TreeTraversal solution = new TreeTraversal();
+            TreeSolutions solution = new TreeSolutions();
             var res = solution.PostorderTraversalDFS(root);
         }
 

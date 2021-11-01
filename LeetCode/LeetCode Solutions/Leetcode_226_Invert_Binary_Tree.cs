@@ -8,7 +8,6 @@ namespace LeetCode
         {
 
             if (root is null) return null;
-            if (root.left is null && root.right is null) return root;
 
             TreeNode left = InvertTree(root.left);
             TreeNode right = InvertTree(root.right);
