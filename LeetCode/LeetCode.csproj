@@ -137,6 +137,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sort.cs" />
     <Compile Include="BackTrackSolutions.cs" />
+    <Compile Include="ArrayBFSSolutions.cs" />
     <Compile Include="TreeSolutions.cs" />
     <Compile Include="TreeNode.cs" />
   </ItemGroup>

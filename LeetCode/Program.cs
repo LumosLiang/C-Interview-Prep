@@ -35,7 +35,7 @@ namespace LeetCode
             //LeetCode36Test();
             //LeetCodeTest21();
             //LeetCodeTest53();
-            LeetCodeTest77();
+            //LeetCodeTest77();
             //LeetCodeTest88();
             //LeetCode98Test();
             //LeetCode118Test();
@@ -44,8 +44,16 @@ namespace LeetCode
             //LeetCode557Test();
             //LeetCode242Test();
             //LeetCode567Test();
+            LeetCode653Test();
             //LeetCode733Test();
             //LeetCode746Test();
+        }
+
+        private static void LeetCode653Test()
+        {
+            TreeSolutions solution = new TreeSolutions();
+            TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+            var res = solution.FindTarget(root, 1);
         }
 
         private static void LeetCodeTest77()

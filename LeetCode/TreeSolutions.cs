@@ -280,11 +280,11 @@ namespace LeetCode
 
             if (root.left == null && root.right == null) return true;
 
-            return helper(root.left, root.right);
+            return Helper(root.left, root.right);
 
         }
 
-        private bool helper(TreeNode left, TreeNode right)
+        private bool Helper(TreeNode left, TreeNode right)
         {
             if (left is null && right is null) return true;
 
@@ -296,7 +296,7 @@ namespace LeetCode
 
             if (left.val == right.val)
             {
-                return helper(left.left, right.right) && helper(left.right, right.left);
+                return Helper(left.left, right.right) && Helper(left.right, right.left);
             }
             else
             {
@@ -378,5 +378,72 @@ namespace LeetCode
         //{
 
         //}
+
+
+        public bool IsValidBST(TreeNode root)
+        {
+            return Helper(root, long.MinValue, long.MaxValue);
+        }
+
+        private bool Helper(TreeNode root, long low, long high)
+        {
+            if (root is null) return true;
+
+            if (root.left is null && root.right is null) return true;
+
+            if(root.val < high && root.val > low) return Helper(root.left, low, root.val) && Helper(root.right, root.val, high);
+            return false;
+
+        }
+
+        // 653. Two Sum IV - Input is a BST
+        // I want to use Recursive way to do this.
+        public bool FindTarget(TreeNode root, int k)
+        {
+            return DFS(root, root, k);
+        }
+
+        private bool DFS(TreeNode root, TreeNode curr, int k)
+        {
+            if (curr is null) return false;
+            return SearchTarget(root, curr, k - curr.val) || DFS(root, curr.left, k) || DFS(root, curr.right, k);
+        }
+
+        private bool SearchTarget(TreeNode root, TreeNode curr, int val)
+        {
+            if (root is null) return false;
+            return val == root.val && root != curr || val > root.val && SearchTarget(root.right, curr, val) || val < root.val && SearchTarget(root.left, curr, val);
+        }
+
+        // 235. Lowest Common Ancestor of a Binary Search Tree
+
+        public TreeNode LowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q)
+        {
+            if (root is null) return null;
+
+            if (root.val > p.val && root.val > q.val) return LowestCommonAncestor(root.left, p, q);
+            if (root.val < p.val && root.val < q.val) return LowestCommonAncestor(root.right, p, q);
+            else return root;
+
+        }
+
+        // 236. Lowest Common Ancestor of a Binary Tree
+
+        public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+        {
+            if (root is null) return null;
+
+            if (root == p) return p;
+            if (root == q) return q;
+
+            var left = LowestCommonAncestor(root.left, p, q);
+            var right = LowestCommonAncestor(root.right, p, q);
+
+            if (left != null && right != null) return root;
+            if (left != null && right == null) return left;
+            if (left == null && right != null) return right;
+            else return null;
+        }
+
     }
 }
