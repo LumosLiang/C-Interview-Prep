@@ -23,12 +23,12 @@ My understanding:
 
 ref:
 
-https://www.c-sharpcorner.com/article/net-framework-vs-net-core-vs-net-standard/
-https://stackoverflow.com/questions/38063837/whats-the-difference-between-net-core-net-framework-and-xamarin
-https://stackoverflow.com/questions/57720865/dot-net-framework-vs-dot-net-core-sdk
-https://stackoverflow.com/questions/44085424/net-standard-vs-net-core
-https://gist.github.com/davidfowl/8939f305567e1755412d6dc0b8baf1b7
-https://www.c-sharpcorner.com/article/future-of-dot-net/
+- https://www.c-sharpcorner.com/article/net-framework-vs-net-core-vs-net-standard/
+- https://stackoverflow.com/questions/38063837/whats-the-difference-between-net-core-net-framework-and-xamarin
+- https://stackoverflow.com/questions/57720865/dot-net-framework-vs-dot-net-core-sdk
+- https://stackoverflow.com/questions/44085424/net-standard-vs-net-core
+- https://gist.github.com/davidfowl/8939f305567e1755412d6dc0b8baf1b7
+- https://www.c-sharpcorner.com/article/future-of-dot-net/
 
 
 ## .Net component
@@ -61,7 +61,8 @@ Ref:
 https://stackoverflow.com/questions/807880/bcl-base-class-library-vs-fcl-framework-class-library
 https://www.linkedin.com/pulse/what-ctscls-fcl-bcl-crl-net-framework-pawan-verma
 https://www.cnblogs.com/eshizhan/archive/2010/01/26/1657041.html
-
+https://www.zhihu.com/question/20607178
+https://docs.microsoft.com/zh-cn/dotnet/standard/clr
 
 ## .net complie 
 
@@ -76,11 +77,12 @@ https://www.cnblogs.com/chucklu/p/11300738.html
 
 C# source code -> (complied as) CIL(dll, exe) -> (execuated) CLR -> machine code
 
-> Compiling Source Code into Managed Module.
-> Combining newly created managed module into the assembly / assemblies.
-> Loading the CLR.
-> Executing the assembly in & by CRL.
-> https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
+- > Compiling Source Code into Managed Module.
+- > Combining newly created managed module into the assembly / assemblies.
+- > Loading the CLR.
+- > Executing the assembly in & by CRL.
+
+https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
 
 
 - source code is complied in managed module. 
@@ -90,6 +92,8 @@ C# source code -> (complied as) CIL(dll, exe) -> (execuated) CLR -> machine code
 - Executing the assembly in & by CLR
 
 ref:
+
+https://docs.microsoft.com/zh-cn/dotnet/standard/managed-execution-process
 
 https://www.c-sharpcorner.com/UploadFile/a8024d/C-Sharp-program-compliation-steps/
 
@@ -165,6 +169,9 @@ The .NET Framework provides a mechanism for unmanaged code to be used in managed
 
 **PDB, dll, exe, debug**
 
+
+https://docs.microsoft.com/zh-cn/dotnet/standard/managed-code
+https://docs.microsoft.com/zh-cn/dotnet/standard/automatic-memory-management
 
 
 https://www.wintellect.com/pdb-files-what-every-developer-must-know/
@@ -256,7 +263,9 @@ The CopyTo method copies all the elements of an array to another one-dimension a
 Both of them are shadow copy, no new instance is created.
 
 ref:
+
 https://www.geeksforgeeks.org/shallow-copy-and-deep-copy-in-c-sharp/
+
 https://stackoverflow.com/questions/198496/difference-between-the-system-array-copyto-and-system-array-clone
 
 ## List
@@ -305,7 +314,9 @@ https://docs.microsoft.com/zh-cn/archive/blogs/ericlippert/ambiguous-optional-pa
 > Plus, since an ArrayList holds objects, it isn't type-safe.
 
 ref:
+
 Why Should I use generics? Why it is good
+
 https://stackoverflow.com/questions/3606595/understanding-c-sharp-generics-much-better/3606655
 
 
@@ -550,9 +561,9 @@ return: very typically used in function that need to return values.
 
 
 ref:
-https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading
-https://www.geeksforgeeks.org/c-sharp-method-overloading/
-https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading
+- https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading
+- https://www.geeksforgeeks.org/c-sharp-method-overloading/
+- https://stackoverflow.com/questions/154577/polymorphism-vs-overriding-vs-overloading
 
 ### defining a field
 
@@ -723,6 +734,8 @@ A static class:
 - Cannot be instantiated.
 - Is sealed.
 - Cannot contain Instance Constructors. 
+
+什么时候会用到呢？
 
 ### Inheritance,
 

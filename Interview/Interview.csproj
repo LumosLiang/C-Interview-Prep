@@ -60,8 +60,6 @@
     <None Include="App.config" />
     <None Include="Summary\donno.md" />
     <None Include="Summary\dotnet_c_sharp_summary.md" />
-    <None Include="Summary\Git.md" />
-    <None Include="Summary\LearnSQL.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeetCode\LeetCode.csproj">
