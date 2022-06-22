@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Singleton.Learn.ThreadSafe
+namespace DesignPattern
 {
     class Singleton
     {
