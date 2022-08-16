@@ -4,24 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview
+namespace Interview.OOP.Basic
 {
     class SciFiBook 
     {
 
-        //        Fields
-        //        Constants
-        //        Properties
-        //        Methods
-        //        Constructors
-        //        Events
+        //Fields
+        //Constants
+        //Properties
+        //Methods
+        //Constructors
+        //Events
+        //Finalizers
+        //Indexers
+        //Operators
+        //Nested Types
 
-        private string name;
+        // private string name;
         
         internal string Name 
         {
-            get { return name; }
-            set { name = value; } 
+            get; set; 
         }
 
         //internal string Name{get;} this is readonly
@@ -32,20 +35,23 @@ namespace Interview
         internal string TimeDimension { get; }
         internal const string Category = "Science Fiction";
 
-      
+        internal SciFiBook()
+        {
 
-        internal SciFiBook(string name): this(name, string.Empty)
-        { 
         }
 
-        internal SciFiBook(string name, string writer): this(name, writer, string.Empty, default)
+        internal SciFiBook(string name): this()
         {
+            Name = name;
         }
 
-        internal SciFiBook(string name, string writer, string timedimension, double price)
+        internal SciFiBook(string name, string writer): this(name)
         {
-            this.name = name;
             Writer = writer;
+        }
+
+        internal SciFiBook(string name, string writer, string timedimension, double price) : this(name, writer)
+        {
             TimeDimension = timedimension;
             Price = price;
         }

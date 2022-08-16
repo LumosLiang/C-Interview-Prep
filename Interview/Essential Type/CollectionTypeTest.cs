@@ -6,46 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Interview
+namespace Interview.Type
 {
-    class Type
+   
+    class CollectionTypeTest
     {
 
-        public void CharInitialize()
-        {
-            // Initialize a string
-
-            char s = 't';
-            Console.WriteLine(s);
-            string S = s.ToString();
-            Console.WriteLine(S);
-
-        }
-
-        public void StringInitialize()
-        {
-            // Initialize a string
-
-            string s = "test";
-            Console.WriteLine(s);
-
-            s += "ABC";
-            Console.WriteLine(s);
-
-        }
-
-        internal void StringBuilderInitialize()
-        {
-            // initialize a string using string builder
-            StringBuilder sb = new StringBuilder("ABC", 50);
-            var sb2 = new StringBuilder(20);
-            var empt = String.Empty;
-
-            StringBuilder sb3 = sb;
-            sb3.Append("for StringBuilder");
-
-            Console.WriteLine(Object.ReferenceEquals(sb3, sb));
-        }
 
         internal void ArrayInitialize()
         {
@@ -63,10 +29,12 @@ namespace Interview
             Console.WriteLine(array_b);
 
             // multi-d array
-            int[,] array_2d = new int[,] { { 1 }, { 2 } };
-            int[,] array_2da = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            int[,,] array_3d = new int[,,] { { { }, { } }, { { }, { } } };
-            
+            int[,] array_twod_one = new int[,] { { 1 }, { 2 } };
+            int[,] array_twod_two = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            int[,,] array_threed = new int[,,] { { { 1, 1 }, { 1, 1 } }, { { 1, 1 }, { 1, 1 } } };
+
+            Console.WriteLine(array_twod_two);
+            Console.WriteLine(array_threed);
 
             // Jagged array
             int[][] jagged_arr = new int[2][];
@@ -76,12 +44,20 @@ namespace Interview
                 new int[]{ 4,5,6},
                 new int[]{7,8,9,10},
             };
+            Console.WriteLine(jagged_arr2);
 
             // multi-array + jagged
 
             int[][,] c = new int[5][,];
             c[0] = new int[2,2] { { 1,2},{3,4 } };
+            Console.ReadLine();
 
+            string[,] arrayString = new string[2, 3] { { "1","2","3"}, { "1", "2", "3" } };
+            string[][] arrayStringJagged = new string[2][];
+            for (int i = 0; i < arrayStringJagged.Length; i++) 
+            {
+                arrayStringJagged[i] = new string[] { "1","2","3"};
+            }
         }
 
         internal void ListInitialize()
@@ -163,20 +139,6 @@ namespace Interview
 
         }
 
-        internal void DefaultInitialize()
-        {
-            throw new NotImplementedException();
-        }
-
-
-        internal void NullableInitialize()
-        {
-            // nullable type
-
-            int? nulltest = null;
-            Console.WriteLine(nulltest);
-
-        }
     }
 }
 

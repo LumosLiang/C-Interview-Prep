@@ -43,23 +43,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassAdvanced\Base.cs" />
-    <Compile Include="ClassAdvanced\Class1.cs" />
-    <Compile Include="ClassAdvanced\Interface.cs" />
-    <Compile Include="ConstrChaining.cs" />
-    <Compile Include="EnumLib.cs" />
-    <Compile Include="ClassBasic\SciFiBook.cs" />
+    <Compile Include="Design Type\Method\ConstrChaining.cs" />
+    <Compile Include="Design Type\Sample\BankAccount.cs" />
+    <Compile Include="Design Type\Sample\Demo.cs" />
+    <Compile Include="Design Type\Sample\Exceptions.cs" />
+    <Compile Include="Design Type\Sample\GiftCardAccount.cs" />
+    <Compile Include="Design Type\Sample\InterestEarningAccount.cs" />
+    <Compile Include="Design Type\Sample\LineOfCreditAccount.cs" />
+    <Compile Include="Design Type\Sample\Transactions.cs" />
+    <Compile Include="Design Type\Type and Member Basics\ConstantTest.cs" />
+    <Compile Include="Design Type\Type and Member Basics\VersioningTest.cs" />
+    <Compile Include="Design Type\Type and Member Basics\StaticTest.cs" />
+    <Compile Include="Design Type\Type and Member Basics\MemberAccessibilityTest.cs" />
+    <Compile Include="Design Type\Type and Member Basics\SomeType.cs" />
+    <Compile Include="Essential Type\StringTest.cs" />
+    <Compile Include="Type Basic\BoxUnboxTest.cs" />
+    <Compile Include="Essential Type\OtherTypeTest.cs" />
+    <Compile Include="Essential Type\CollectionTypeTest.cs" />
+    <Compile Include="Essential Type\EnumLib.cs" />
+    <Compile Include="Design Type\SciFiBook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RefValTest.cs" />
+    <Compile Include="Design Type\Parameter\RefValTest.cs" />
     <Compile Include="Statement.cs" />
-    <Compile Include="StructTestCoord.cs" />
-    <Compile Include="Type.cs" />
+    <Compile Include="Type Basic\EqualityIdentityTest.cs" />
+    <Compile Include="Type Basic\StructClassTest.cs" />
+    <Compile Include="Type Basic\PrimitiveTypeTest.cs" />
+    <Compile Include="TypeFundamental.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Summary\donno.md" />
-    <None Include="Summary\dotnet_c_sharp_summary.md" />
+    <None Include="Notes\donno.md" />
+    <None Include="Notes\dotnet_c_sharp_summary.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeetCode\LeetCode.csproj">
@@ -67,6 +82,10 @@
       <Name>LeetCode</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Design Type\Attributes\" />
+    <Folder Include="Design Type\Generics\" />
+    <Folder Include="Design Type\interface\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
