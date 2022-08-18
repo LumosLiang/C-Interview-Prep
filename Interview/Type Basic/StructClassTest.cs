@@ -17,6 +17,11 @@ namespace Interview.Type.Basic
             Y = y;
         }
 
+        public void Change(double newX, double newY) {
+            X = newX;
+            Y = newY;
+        }
+
         public override string ToString()
         {
             return $"({X}, {Y})";

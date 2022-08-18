@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Design Type\Attributes\AnonymousTypeUsingProp.cs" />
+    <Compile Include="Design Type\Attributes\InitializersWithProp.cs" />
+    <Compile Include="Design Type\Attributes\AttributesEvolve.cs" />
     <Compile Include="Design Type\Method\ConstrChaining.cs" />
     <Compile Include="Design Type\Sample\BankAccount.cs" />
     <Compile Include="Design Type\Sample\Demo.cs" />
@@ -83,7 +86,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Design Type\Attributes\" />
     <Folder Include="Design Type\Generics\" />
     <Folder Include="Design Type\interface\" />
   </ItemGroup>

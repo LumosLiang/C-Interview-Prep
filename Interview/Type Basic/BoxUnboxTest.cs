@@ -24,23 +24,51 @@ namespace Interview.Type.Basic
 
         public void Unboxing()
         {
-            // unboxing
-            object obj2 = "stringtest";
-            int num2 = (int)obj2;
-            string str = (string)obj2;
+            // boxing
+            Int32 num = 32;
+            object o = num;
 
-            Console.WriteLine("unboxing to int {0} and to string {1}", num2, str);
+            // unboxing
+            Int16 UnboxNum = (Int16)o;
+            Int32 UnboxNum2 = (Int32)o;
+
         }
 
+        public void BoxUnboxPerformaceOptimize()
+        {
+            Int32 v = 5;            // Create an unboxed value type variable.
+            Object o = v;            // o refers to a boxed Int32 containing 5.
+            v = 123;                 // Changes the unboxed value to 123
+
+            // boxing 3 times
+            Console.WriteLine(v + ", " + (Int32)o); 
+
+            // boxing 2 times
+            Console.WriteLine(v + ", " + o); 
+
+            // boxing 1 time
+            Console.WriteLine(v.ToString() + ", " + o);
+
+        }
+        
         public void BoxUnboxOnToString()
         {
             //A boxing conversion makes a copy of the value being boxed 
-            Coord st = new Coord(1, 1);
-            object sto = st;
-            st.X = 2;
-            Console.WriteLine(st.X);
-            Console.WriteLine(((Coord)sto).X);
+            Coord p = new Coord(1, 1);
+            Console.WriteLine(p);
+
+            p.Change(2, 2);
+            Console.WriteLine(p);
+
+            Object o = p;
+            Console.WriteLine(o);
+
+            ((Coord)o).Change(3, 3);
+
+            Console.WriteLine(o);
+            Console.ReadKey();
         }
+
 
         public void PutIntoArray()
         {

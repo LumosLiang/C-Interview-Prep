@@ -25,7 +25,7 @@ namespace Interview
             #endregion
 
             #region TestReferenceType, ValueType  
-            ValueRefTypeTest();
+            // ValueRefTypeTest();
             #endregion
 
             // this is regarding type 
@@ -35,7 +35,16 @@ namespace Interview
 
             //this is regarding object, instance
             #region Equals VS ==
-            // EqualTest();
+            //// EqualTest();
+            ////BoxUnboxTest but = new BoxUnboxTest();
+            ////but.BoxUnboxOnToString();
+
+            //EqualityIdentityTest EIT = new EqualityIdentityTest();
+            //EIT.EqualTest();
+            //Design_Type.Type_and_Member_Basics.Manager m = new Design_Type.Type_and_Member_Basics.Manager();
+            //// m.GetMoney();
+
+
 
             #endregion
 
@@ -49,10 +58,10 @@ namespace Interview
             //BetterPhone.name = "BetterPhone";
             //BetterPhone.Dial();
 
-            //Phone phone = new BetterPhone();
-            //// phone.name = "BetterPhone";
-            //phone.Dial();
-            //Console.ReadLine();
+            Phone phone = new BetterPhone();
+            phone.name = "BetterPhone";
+            phone.Dial();
+            Console.ReadLine();
 
             //TypeFundamental.CastingTest();
             //Console.ReadLine();
@@ -87,7 +96,7 @@ namespace Interview
             //ott.DefaultInitialize();
             //ott.NullableInitialize();
             StructTest();
-            BoxUnboxTest();
+            //BoxUnboxTest();
             EnumTest();
 
         }
@@ -115,11 +124,11 @@ namespace Interview
             // rvtest.TwoVarCanReferenceSameObject();
         }
 
-        static void BoxUnboxTest()
-        {
-            var but = new BoxUnboxTest();
+        //static void BoxUnboxTest()
+        //{
+        //    var but = new BoxUnboxTest();
        
-        }
+        //}
 
         static void EnumTest()
         {

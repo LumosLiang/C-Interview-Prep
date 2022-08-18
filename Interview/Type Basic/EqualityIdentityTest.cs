@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview.Type_Basic
+namespace Interview.Type.Basic
 {
     class EqualityIdentityTest
     {
-        static void EqualTest()
+        public void EqualTest()
         {
 
             double e = 2.718281828459045;
@@ -24,7 +24,7 @@ namespace Interview.Type_Basic
 
             // check reference, can be identity or Equality?
             Console.WriteLine(o1 == o2);
-
+            Console.ReadLine();
         }
     }
 }

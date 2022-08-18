@@ -18,20 +18,18 @@ namespace Interview.Type.Basic
 
         public void Initialize()
         {
-            // 
+            // different ways to initialize
             System.Int32 a = new System.Int32();
             int c = new int();
             int b = 32;
 
+            Console.WriteLine((a, c));
             Console.WriteLine(b);
 
             char s = 't';
             Console.WriteLine(s);
 
         }
- 
-
-
     }
 }
 
