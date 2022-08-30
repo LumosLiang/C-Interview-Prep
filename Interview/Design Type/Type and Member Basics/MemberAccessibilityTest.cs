@@ -18,6 +18,8 @@ namespace Interview.Design_Type.Type_and_Member_Basics
         {
             Console.WriteLine(1000);
         }
+
+        // protected abstract void GetVacation();
     }
 
     public class Manager: Employee

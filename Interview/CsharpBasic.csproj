@@ -46,6 +46,12 @@
     <Compile Include="Design Type\Attributes\AnonymousTypeUsingProp.cs" />
     <Compile Include="Design Type\Attributes\InitializersWithProp.cs" />
     <Compile Include="Design Type\Attributes\AttributesEvolve.cs" />
+    <Compile Include="Design Type\Generics\Differnce.cs" />
+    <Compile Include="Design Type\Generics\GenericInheritanceTest.cs" />
+    <Compile Include="Design Type\Generics\GenericOpenCloseTest.cs" />
+    <Compile Include="Design Type\Generics\GenericInterfaceTest.cs" />
+    <Compile Include="Design Type\InterfaceLearn\CreateInterface.cs" />
+    <Compile Include="Design Type\InterfaceLearn\InterfaceImplementationVersioningTest.cs" />
     <Compile Include="Design Type\Method\ConstrChaining.cs" />
     <Compile Include="Design Type\Sample\BankAccount.cs" />
     <Compile Include="Design Type\Sample\Demo.cs" />
@@ -85,9 +91,6 @@
       <Name>LeetCode</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Design Type\Generics\" />
-    <Folder Include="Design Type\interface\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@ using Interview.Type;
 using Interview.Design_Type.Type_and_Member_Basics;
 using Interview.Type.Basic;
 using Interview.OOP.Sample;
+using Interview.Design_Type.InterfaceLearn;
 
 namespace Interview
 {
@@ -58,14 +59,16 @@ namespace Interview
             //BetterPhone.name = "BetterPhone";
             //BetterPhone.Dial();
 
-            Phone phone = new BetterPhone();
-            phone.name = "BetterPhone";
-            phone.Dial();
-            Console.ReadLine();
+            //Phone phone = new BetterPhone();
+            //phone.name = "BetterPhone";
+            //phone.Dial();
+            //Console.ReadLine();
 
             //TypeFundamental.CastingTest();
             //Console.ReadLine();
 
+            InterfaceImplementationVersioningTest.Go();
+            Console.ReadLine();
 
         }
 
