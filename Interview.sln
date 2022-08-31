@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpBasic", "Interview\Cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpThreading", "CsharpThreading\CsharpThreading.csproj", "{77380F23-05D7-44A8-9216-AF1C08570669}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{6E079CFE-D28B-4601-828D-F2510E0AA0C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{77380F23-05D7-44A8-9216-AF1C08570669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77380F23-05D7-44A8-9216-AF1C08570669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77380F23-05D7-44A8-9216-AF1C08570669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E079CFE-D28B-4601-828D-F2510E0AA0C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E079CFE-D28B-4601-828D-F2510E0AA0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E079CFE-D28B-4601-828D-F2510E0AA0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E079CFE-D28B-4601-828D-F2510E0AA0C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
