@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System;
 
 namespace LeetCode
 {
@@ -7,16 +8,26 @@ namespace LeetCode
     {
         public int Reverse(int x)
         {
-            int res = 0;
+            if (x == -Math.Pow(2, 31)) return 0;
+
+            int res = 0, baseNumber = 10, sign = 1;
+            if (x < 0) sign = -1;
+            x = Math.Abs(x);
+
             while (x != 0)
             {
-                int temp = res * 10 + x % 10;
-                // check if overflow
-                if (temp / 10 != res) return 0;
-                res = temp;
+                var r = x % 10;
+                if (res > int.MaxValue / baseNumber || (res == int.MaxValue / baseNumber && r >= int.MaxValue - res * baseNumber))
+                    return 0;
+
+                res = res * baseNumber + r;
+
+                //// check if overflow 1
+                //if (temp / 10 != res) return 0;
+
                 x /= 10;
             }
-            return res;
+            return res * sign;
         }
     }
 }

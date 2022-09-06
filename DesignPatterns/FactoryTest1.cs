@@ -5,7 +5,7 @@ using System.Text;
 namespace DesignPatterns
 {
 
-    public class FactoryTest { 
+    public class FactoryTest1 { 
 
     }
 

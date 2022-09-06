@@ -2,10 +2,9 @@
 
 namespace LeetCode
 {
-    public class Leetcode_33_Search_in_Rotated_Sorted_Array
-
+    public class Leetcode_81_Search_in_Rotated_Sorted_Array_II
     {
-        public int Search(int[] nums, int target)
+        public bool Search(int[] nums, int target)
         {
 
             var l = 0;
@@ -13,8 +12,11 @@ namespace LeetCode
 
             while (l < r)
             {
+
+                while (l + 1 < r && nums[l + 1] == nums[l]) l++;
+
                 var mid = l + (r - l) / 2;
-                if (nums[mid] == target) return mid;
+                if (nums[mid] == target) return true;
 
                 if (nums[mid] > nums[r] && target <= nums[r]) l = mid + 1;
                 else if (target > nums[r] && nums[mid] <= nums[r]) r = mid - 1;
@@ -25,8 +27,8 @@ namespace LeetCode
                 }
 
             }
-            if (nums[l] == target) return l;
-            else return -1;
+            if (nums[l] == target) return true;
+            else return false;
         }
     }
 

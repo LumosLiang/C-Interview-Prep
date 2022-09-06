@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 
 namespace LeetCode
@@ -6,8 +5,10 @@ namespace LeetCode
     public class MyQueue
     {
 
-        private readonly Stack<int> s1;
-        private readonly Stack<int> s2;
+        private Stack<int> s1;
+        private Stack<int> s2;
+
+        
 
         public MyQueue()
         {
@@ -22,20 +23,22 @@ namespace LeetCode
 
         public int Pop()
         {
-            Peek();
+            if (s2.Count == 0)
+                Transfer(); ;
             return s2.Pop();
         }
 
         public int Peek()
         {
-            if (s2.Count == 0)
-            {
-                while (s1.Count != 0)
-                {
-                    s2.Push(s1.Pop());
-                }
-            }
+            if (s2.Count == 0) 
+                Transfer();
             return s2.Peek();
+        }
+
+        private void Transfer()
+        {
+            while (s1.Count != 0)
+                s2.Push(s1.Pop());
         }
 
         public bool Empty()

@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 
 namespace LeetCode
@@ -54,6 +53,13 @@ namespace LeetCode
             else curr.next = currB;
 
             return dummy.next;
+        }
+
+
+        // another way using heap
+        public ListNode MergeKLists2(ListNode[] lists)
+        { 
+            
         }
     }
 

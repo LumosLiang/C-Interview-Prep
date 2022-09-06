@@ -7,31 +7,31 @@ namespace LeetCode
     {
         public string LongestCommonPrefix(string[] strs)
         {
-            if (strs.Length == 1) return strs[0];
 
-            var res = "";
-            int p = 0;
-            while (IsEqual(strs, p))
+            var res = strs[0];
+
+            for (int i = 1; i < strs.Length; i++)
             {
-                res += strs[0][p];
-                p += 1;
+                res = GetCommon(res, strs[i]);
             }
+
             return res;
         }
 
-        private bool IsEqual(string[] strs, int p)
+        private static string GetCommon(string string1, string string2)
         {
-            var res = true;
-
-            for (int i = 0; i < strs.Length - 1; i++)
+            int p1 = 0, p2 = 0;
+            string res = "";
+            while (p1 < string1.Length && p2 < string2.Length)
             {
-                if (strs[i].Substring(p, strs[i].Length - p) != "" && strs[i + 1].Substring(p, strs[i].Length - p) != "" && strs[i][p] == strs[i + 1][p])
+                if (string1[p1] == string2[p2])
                 {
-                    continue;
+                    res += string1[p1];
+                    p1++;
+                    p2++;
                 }
-                else return false;
+                else break;
             }
-
             return res;
         }
     }

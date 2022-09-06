@@ -30,7 +30,7 @@ namespace LeetCode
             //LeetCode4Test();
             //LeetCode5Test();
             //LeetCode6Test();
-            //LeetCode7Test();
+            LeetCode7Test();
             //LeetCode11Test();
             //LeetCode36Test();
             //LeetCodeTest21();
@@ -44,9 +44,23 @@ namespace LeetCode
             //LeetCode557Test();
             //LeetCode242Test();
             //LeetCode567Test();
-            LeetCode653Test();
+            //LeetCode653Test();
             //LeetCode733Test();
             //LeetCode746Test();
+            //LeetCode207Test();
+        }
+
+        private static void LeetCode207Test()
+        {
+            Leetcode_207_Course_Schedule solution = new Leetcode_207_Course_Schedule();
+            int numCourse = 2;
+            int[][] prerequisites = new int[][]
+            {
+                new int[]{1, 0}
+            };
+
+            Console.WriteLine(solution.CanFinish(numCourse, prerequisites));
+            Console.ReadKey();
         }
 
         private static void LeetCode653Test()
@@ -218,7 +232,7 @@ namespace LeetCode
         static void LeetCode7Test()
         {
             Leetcode_7_Reverse_Integer solution = new Leetcode_7_Reverse_Integer();
-            var res = solution.Reverse(123);
+            var res = solution.Reverse(-2147483648);
             Console.WriteLine(res);
 
         }

@@ -9,6 +9,7 @@ namespace LeetCode
         public int MaxArea(int[] height)
         {
             int left = 0, right = height.Length - 1, res = 0;
+            // direction
 
             while (left <= right)
             {

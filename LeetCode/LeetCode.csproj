@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Heap.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_225_Implement_Stack_using_Queues.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_190_Reverse_Bits.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_191_Number_of_1_Bits.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_116_Populating_Next_Right_Pointers_in_Each_Node.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_118_Pascal_Triangle.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_11_Container_With_Most_Water.cs" />
@@ -54,7 +57,11 @@
     <Compile Include="LeetCode Solutions\Leetcode_142_Linked_List_Cycle_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_141_Linked_List_Cycle.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_14_Longest_Common_Prefix.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_153_Find_Minimum_in_Rotated_Sorted_Array.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_207_Course_Schedule.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_232_Implement_Queue_using_Stacks.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_77_Combinations.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_81_Search_in_Rotated_Sorted_Array_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_695_Max_Area_of_Island.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_740_Delete_and_Earn.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_213_House_Robber_II.cs" />
@@ -118,7 +125,7 @@
     <Compile Include="LeetCode Solutions\Leetcode_34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_429_N_ary_Tree_Level_Order_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_46_Permutations.cs" />
-    <Compile Include="LeetCode Solutions\Leetcode_47_Permutations2.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_47_Permutations_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_589_N_ary_Tree_Preorder_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_590_N_ary_Tree_Postorder_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_617_Merge_Two_Binary_Trees.cs" />
@@ -128,7 +135,7 @@
     <Compile Include="LeetCode Solutions\Leetcode_78_Subsets.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_875_Koko_Eating_Bananas.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_876_Middle_Of_The_Linked_List.cs" />
-    <Compile Include="LeetCode Solutions\Leetcode_90_Subset2.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_90_Subset_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_94_Binary_Tree_Inorder_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_15_3Sum.cs" />
     <Compile Include="ListNode.cs" />

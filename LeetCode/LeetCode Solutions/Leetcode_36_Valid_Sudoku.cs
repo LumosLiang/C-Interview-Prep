@@ -24,12 +24,12 @@ namespace LeetCode
         {
             for (int i = 0; i < 9; i++)
             {
-                List<char> tempcol = new List<char>();
+                List<char> tempCol = new List<char>();
                 for (int j = 0; j < 9; j++)
                 {
-                    tempcol.Add(board[j][i]);
+                    tempCol.Add(board[j][i]);
                 }
-                if (!IsValidUnit(tempcol)) return false;
+                if (!IsValidUnit(tempCol)) return false;
 
             }
             return true;
@@ -42,16 +42,16 @@ namespace LeetCode
             {
                 for (int j = 0; j < 9; j += 3)
                 {
-                    List<char> tempcol = new List<char>();
+                    List<char> tempCol = new List<char>();
                     // generate cube
                     for (int k = i; k < i + 3; k++)
                     {
                         for (int m = j; m < j + 3; m++)
                         {
-                            tempcol.Add(board[k][m]);
+                            tempCol.Add(board[k][m]);
                         }
                     }
-                    if (!IsValidUnit(tempcol)) return false;
+                    if (!IsValidUnit(tempCol)) return false;
                 }
             }
             return true;
@@ -59,16 +59,16 @@ namespace LeetCode
 
         private bool IsValidUnit(List<char> array)
         {
-            List<char> withoutempty = new List<char>();
+            List<char> withOutEmpty = new List<char>();
 
             foreach (char c in array)
             {
-                if (c != '.') withoutempty.Add(c);
+                if (c != '.') withOutEmpty.Add(c);
             }
 
-            HashSet<char> s = new HashSet<char>(withoutempty);
+            HashSet<char> s = new HashSet<char>(withOutEmpty);
 
-            return withoutempty.Count == s.Count;
+            return withOutEmpty.Count == s.Count;
         }
     }
 }

@@ -58,6 +58,7 @@ namespace Interview.Type
             {
                 arrayStringJagged[i] = new string[] { "1","2","3"};
             }
+            
         }
 
         internal void ListInitialize()
@@ -75,6 +76,8 @@ namespace Interview.Type
                            "Mamenchisaurus" };
 
             List<string> dinosaurs = new List<string>(input);
+
+            dinosaurs.Add("12");
 
             Console.WriteLine(l);
             Console.WriteLine(l1);
@@ -118,6 +121,10 @@ namespace Interview.Type
                 { "bmp", "paint.exe"},
                 { "dib", "paint.exe"},
             };
+
+            Dictionary<int, List<int>> dict_test1 = new Dictionary<int, List<int>>();
+
+
             var member = dict_test["txt"];
         }
 
@@ -136,6 +143,14 @@ namespace Interview.Type
                 if (i % 2 == 0) evennum.Add(i);
             }
             Console.WriteLine(evennum);
+
+        }
+
+        internal void DequeInitialize()
+        {
+            Queue<int> q = new Queue<int>();
+
+            Console.WriteLine(q);
 
         }
 

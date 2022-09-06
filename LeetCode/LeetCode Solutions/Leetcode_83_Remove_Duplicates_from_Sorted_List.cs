@@ -12,17 +12,13 @@ namespace LeetCode
 
             while (nxt != null)
             {
-                if (curr.val == nxt.val)
-                {
-                    nxt = nxt.next;
-                }
-                else
+                if (curr.val != nxt.val)  
                 {
                     curr.next = nxt;
-                    curr = nxt;
-                    nxt = curr.next;
+                    curr = curr.next;
                 }
-                
+
+                nxt = nxt.next;
             }
             curr.next = nxt;
 

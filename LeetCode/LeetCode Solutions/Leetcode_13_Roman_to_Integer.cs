@@ -18,20 +18,19 @@ namespace LeetCode
                 {'M',1000}
             };
 
-            int res = 0, over = 0;
+            int res = 0;
 
             for (int i = 0; i < s.Length - 1; i++)
             {
-                int pre = table[s[i]], lat = table[s[i + 1]];
+                int curr = table[s[i]], nxt = table[s[i + 1]];
 
-                if (pre < lat)
-                {
-                    over += pre * 2;
-                }
-                res += pre;
+                if (curr < nxt)
+                    res -= curr;
+                else
+                    res += curr;
             }
 
-            return res + table[s[-1]] - over;
+            return res + table[s[s.Length - 1]];
         }
     }
 }
