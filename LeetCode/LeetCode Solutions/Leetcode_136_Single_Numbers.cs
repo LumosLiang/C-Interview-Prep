@@ -2,7 +2,7 @@ using System.Linq;
 
 namespace LeetCode
 {
-    public class Leetcode_136_SingleNumbers
+    public class Leetcode_136_Single_Numbers
     {
         public int SingleNumber(int[] nums)
         {

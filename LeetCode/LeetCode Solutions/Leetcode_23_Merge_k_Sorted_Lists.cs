@@ -57,10 +57,32 @@ namespace LeetCode
 
 
         // another way using heap
-        public ListNode MergeKLists2(ListNode[] lists)
-        { 
-            
-        }
+        //public ListNode MergeKLists(ListNode[] lists)
+        //{
+
+        //    PriorityQueue<ListNode, int> pq = new PriorityQueue<ListNode, int>();
+
+        //    foreach (var head in lists)
+        //    {
+        //        if (head != null) pq.Enqueue(head, head.val);
+        //    }
+
+        //    var res = new ListNode();
+        //    var curr = res;
+
+        //    while (pq.Count != 0)
+        //    {
+        //        var node = pq.Dequeue();
+        //        if (node.next != null) pq.Enqueue(node.next, node.next.val);
+
+        //        curr.next = node;
+        //        curr = curr.next;
+        //        // node.next = null;
+        //    }
+
+        //    return res.next;
+
+        //}
     }
 
 }

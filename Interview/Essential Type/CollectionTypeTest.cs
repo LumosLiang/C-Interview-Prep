@@ -63,6 +63,7 @@ namespace Interview.Type
 
         internal void ListInitialize()
         {
+            
             // initialize a list
             List<string> l = new List<string>();
             List<string> l1 = new List<string>() { "This", "is", "shit" };

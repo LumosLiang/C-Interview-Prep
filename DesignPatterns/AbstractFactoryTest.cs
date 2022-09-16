@@ -9,6 +9,7 @@ namespace DesignPatterns
         private readonly IGUIFactory _guiFactory;
 
         private IButton _button;
+        private ICheckBox _checkbox;
         public AbstractFactoryTest(IGUIFactory gUIFactory)
         {
             _guiFactory = gUIFactory;
@@ -17,11 +18,13 @@ namespace DesignPatterns
         public void CreateUI() 
         {
             _button = _guiFactory.CreateButton();
+            _checkbox = _guiFactory.CreateCheckBox();
         }
 
         public void Paint()
         {
             _button.Paint();
+            _checkbox.Paint();
         }
 
     }
@@ -84,14 +87,21 @@ namespace DesignPatterns
     public interface ICheckBox
     {
         void Paint();
+        void Collorate(IButton button);
     }
 
     public class WinCheckBox : ICheckBox
     {
+
         public void Paint()
         {
             Console.WriteLine("This is WinCheckBox's paint");
         }
+        public void Collorate(IButton button)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
     public class MacCheckBox : ICheckBox
@@ -100,6 +110,11 @@ namespace DesignPatterns
         {
             Console.WriteLine("This is MacCheckBox's paint");
         }
+        public void Collorate(IButton button)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
 }

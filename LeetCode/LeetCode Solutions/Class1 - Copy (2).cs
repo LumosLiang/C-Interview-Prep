@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode.LeetCode_Solutions
+namespace LeetCode
 {
-    class Leetcode_225_Implement_Stack_using_Queues
+    class Class1
     {
-        
 
     }
 }

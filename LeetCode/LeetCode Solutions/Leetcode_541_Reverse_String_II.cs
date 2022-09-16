@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace LeetCode.LeetCode_Solutions
 {
-    class Leetcode_225_Implement_Stack_using_Queues
+    class Leetcode_541_Reverse_String_II
     {
-        
 
     }
 }

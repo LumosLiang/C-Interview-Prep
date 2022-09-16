@@ -43,7 +43,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LeetCode Solutions\Class1 - Copy %282%29.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_16_3Sum_Closest.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_239_Sliding_Window_Maximum.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_4_Median_of_Two_Sorted_Arrays.cs" />
     <Compile Include="Heap.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_424_Longest_Repeating_Character_Replacement.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_1358_Number_of_Substrings_Containing_All_Three_Characters.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_137_Single_Number_II.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_862_Shortest_Subarray_with_Sum_at_Least_K.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_395_Longest_Substring_with_At_Least_K_Repeating_Characters.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_378_Kth_Smallest_Element_in_a_Sorted_Matrix.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_146_LRU_Cache.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_295_Find_Median_from_Data_Stream.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_215_Kth_Largest_Element_in_an_Array.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_151_Reverse_Words_in_a_String.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_43_Multiply_Strings.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_541_Reverse_String_II.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_49_Group_Anagrams.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_454_4Sum_II.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_92_Reverse_Linked_List_II.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_25_Reverse_Nodes_in_k_Group.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_138_Copy_List_with_Random_Pointer.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_61_Rotate_List.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_278_First_Bad_Version - Copy.cs" />
+    <Compile Include="LeetCode Solutions\LeetCode_287_Find_the_Duplicate_Number.cs" />
+    <Compile Include="LeetCode Solutions\LeetCode_41_First_Missing_Positive.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_225_Implement_Stack_using_Queues.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_190_Reverse_Bits.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_191_Number_of_1_Bits.cs" />
@@ -68,7 +93,7 @@
     <Compile Include="LeetCode Solutions\Leetcode_198_House_Robber.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_19_Remove_Nth_Node_From_End_of_List.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_189_Rotate_Array.cs" />
-    <Compile Include="LeetCode Solutions\Leetcode_167_TwoSum_2.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_167_TwoSum_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_203_Remove_Linked_List_Elements.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_242_Valid_Anagram.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_383_Ransom_Note.cs" />
@@ -107,7 +132,7 @@
     <Compile Include="LeetCode Solutions\Leetcode_102_Binary_Tree_Level_Order_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_104_Maximum_Depth_of_Binary_Tree.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_1108_Defanging_An_IP_Address.cs" />
-    <Compile Include="LeetCode Solutions\Leetcode_136_SingleNumbers.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_136_Single_Numbers.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_1431_Kids_With_the_Greatest_Number_of_Candies.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_144_Binary_Tree_Preorder_Traversal.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_145_Binary_Tree_Postorder_Traversal.cs" />

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LeetCode
 {
-    public class Leetcode_167_TwoSum_2
+    public class Leetcode_167_TwoSum_II
     {
         public int[] TwoSum(int[] numbers, int target)
         {

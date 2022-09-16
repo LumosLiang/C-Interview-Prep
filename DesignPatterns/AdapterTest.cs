@@ -32,7 +32,7 @@ namespace DesignPatterns
     {
         public int GetSpecificRequest() {
 
-            return 255;
+            return 200;
         }
     }
 
@@ -56,8 +56,4 @@ namespace DesignPatterns
         }
         
     }
-
-
-
-
 }
