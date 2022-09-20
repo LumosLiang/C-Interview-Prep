@@ -48,8 +48,14 @@ namespace Interview.Design_Type.Method
             m_b = 0xff;
         }
 
+        public SomeType(int x) : this()
+        {
+            m_x = x;
+        }
+
         public SomeType(string s): this()
-        { 
+        {
+            m_s = s;
         }
 
         public SomeType(int i, string s): this(s)

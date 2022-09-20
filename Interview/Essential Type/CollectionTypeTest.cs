@@ -58,6 +58,10 @@ namespace Interview.Type
             {
                 arrayStringJagged[i] = new string[] { "1","2","3"};
             }
+
+            // Array slice
+
+   
             
         }
 
@@ -89,6 +93,8 @@ namespace Interview.Type
 
             List<Object> contain_all = new List<object> { "", 1, 'a', new int[] { 1, 2, 3 } };
             Console.WriteLine(contain_all);
+
+            // LIST SLICE
         }
 
         internal void HashtableInitialize()
@@ -124,8 +130,6 @@ namespace Interview.Type
             };
 
             Dictionary<int, List<int>> dict_test1 = new Dictionary<int, List<int>>();
-
-
             var member = dict_test["txt"];
         }
 
@@ -147,11 +151,19 @@ namespace Interview.Type
 
         }
 
-        internal void DequeInitialize()
+        internal void QueueInitialize()
         {
             Queue<int> q = new Queue<int>();
 
             Console.WriteLine(q);
+
+        }
+
+        internal void DequeueInitialize()
+        {
+            LinkedList<int> dq = new LinkedList<int>();
+
+            Console.WriteLine(dq);
 
         }
 

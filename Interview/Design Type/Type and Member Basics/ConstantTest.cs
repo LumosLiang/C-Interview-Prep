@@ -10,13 +10,16 @@ namespace Interview.Design_Type.Type_and_Member_Basics
     {
         public void RefFieldChangeTest()
         {
+            // correct,
             AType.InvalidChars[0] = 'X';
             AType.InvalidChars[1] = 'Y';
             AType.InvalidChars[2] = 'Z';
 
 
-            // incorrect, it is the reference that is immutable, not the object that the field refers to.
+            // incorrect, 
             // AType.InvalidChars = new char[] { 'X', 'Y', 'Z' };
+
+            // it is the reference that is immutable, not the object that the field refers to.
         }
 
     }

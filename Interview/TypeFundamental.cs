@@ -16,7 +16,7 @@ namespace Interview
 
 
             Object o1 = new Object();
-            Employee e1 = (Employee)o;
+            Employee e1 = (Employee)o1;
 
             Manager m = new Manager();
             PromoteEmployee(m);
@@ -51,6 +51,7 @@ namespace Interview
             Boolean b1 = o is Boolean;
             Boolean b2 = o is Employee;
             Boolean b3 = o is Object;
+            Console.WriteLine((b1, b2, b3));
 
         }
         static void AsTest()

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode.LeetCode_Solutions
+namespace LeetCode
 {
-    class Class1
+    class Leetcode_212_Word_Search_II
     {
+
     }
 }

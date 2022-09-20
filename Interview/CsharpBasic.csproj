@@ -53,6 +53,9 @@
     <Compile Include="Design Type\InterfaceLearn\CreateInterface.cs" />
     <Compile Include="Design Type\InterfaceLearn\InterfaceImplementationVersioningTest.cs" />
     <Compile Include="Design Type\Method\ConstrChaining.cs" />
+    <Compile Include="Design Type\Method\ExtensionMethodTest.cs" />
+    <Compile Include="Design Type\Method\TypeConstructorTest.cs" />
+    <Compile Include="Design Type\Method\StructConstructorTest.cs" />
     <Compile Include="Design Type\Sample\BankAccount.cs" />
     <Compile Include="Design Type\Sample\Demo.cs" />
     <Compile Include="Design Type\Sample\Exceptions.cs" />
@@ -60,6 +63,7 @@
     <Compile Include="Design Type\Sample\InterestEarningAccount.cs" />
     <Compile Include="Design Type\Sample\LineOfCreditAccount.cs" />
     <Compile Include="Design Type\Sample\Transactions.cs" />
+    <Compile Include="Design Type\Type and Member Basics\CallandCallvirTest.cs" />
     <Compile Include="Design Type\Type and Member Basics\ConstantTest.cs" />
     <Compile Include="Design Type\Type and Member Basics\VersioningTest.cs" />
     <Compile Include="Design Type\Type and Member Basics\StaticTest.cs" />

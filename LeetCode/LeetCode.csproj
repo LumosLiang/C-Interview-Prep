@@ -44,6 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LeetCode Solutions\Class1 - Copy %282%29.cs" />
+    <Compile Include="LeetCode Solutions\Class1 - Copy %283%29.cs" />
+    <Compile Include="LeetCode Solutions\Class1 - Copy %284%29.cs" />
+    <Compile Include="LeetCode Solutions\Class1 - Copy %285%29.cs" />
+    <Compile Include="LeetCode Solutions\Class1 - Copy %286%29.cs" />
+    <Compile Include="LeetCode Solutions\Class1 - Copy %287%29.cs" />
+    <Compile Include="LeetCode Solutions\Class1 - Copy.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_72_Edit_Distance.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_212_Word_Search_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_16_3Sum_Closest.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_239_Sliding_Window_Maximum.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_4_Median_of_Two_Sorted_Arrays.cs" />

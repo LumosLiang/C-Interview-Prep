@@ -4,9 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode.LeetCode_Solutions
+namespace Interview.Design_Type.Method
 {
-    class Class1
+
+
+    class TypeConstructorTest
     {
+        public TypeConstructorTest()
+        { 
+        }
+
     }
+
 }

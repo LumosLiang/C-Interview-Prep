@@ -8,6 +8,12 @@ namespace Interview.Type.Basic
 {
     public struct Coord
     {
+
+        // inherited from Value Type
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         public double X { get; set; }
         public double Y { get; set; }
 
