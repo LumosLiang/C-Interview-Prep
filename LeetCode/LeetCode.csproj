@@ -43,13 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LeetCode Solutions\Class1 - Copy %282%29.cs" />
-    <Compile Include="LeetCode Solutions\Class1 - Copy %283%29.cs" />
-    <Compile Include="LeetCode Solutions\Class1 - Copy %284%29.cs" />
-    <Compile Include="LeetCode Solutions\Class1 - Copy %285%29.cs" />
-    <Compile Include="LeetCode Solutions\Class1 - Copy %286%29.cs" />
-    <Compile Include="LeetCode Solutions\Class1 - Copy %287%29.cs" />
-    <Compile Include="LeetCode Solutions\Class1 - Copy.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_297_Serialize_and_Deserialize_Binary_Tree.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_264_Ugly_Number_II.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_172_Factorial_Trailing_Zeroes.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_166_Fraction_to_Recurring_Decimal.cs" />
+    <Compile Include="LeetCode Solutions\Leetcode_384_Shuffle_an_Array.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_72_Edit_Distance.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_212_Word_Search_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_16_3Sum_Closest.cs" />

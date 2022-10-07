@@ -30,7 +30,7 @@ namespace LeetCode
             //LeetCode4Test();
             //LeetCode5Test();
             //LeetCode6Test();
-            LeetCode7Test();
+            //LeetCode7Test();
             //LeetCode11Test();
             //LeetCode36Test();
             //LeetCodeTest21();
@@ -48,6 +48,26 @@ namespace LeetCode
             //LeetCode733Test();
             //LeetCode746Test();
             //LeetCode207Test();
+            //LeetCode172Test();
+            LeetCode297Test();
+
+        }
+
+        private static void LeetCode297Test()
+        {
+            var solution = new Leetcode_297_Serialize_and_Deserialize_Binary_Tree();
+            TreeNode root = new TreeNode(1);
+
+            var s = solution.serialize(root);
+            var res = solution.deserialize(s);
+        }
+
+        private static void LeetCode172Test()
+        {
+            var solution = new Leetcode_172_Factorial_Trailing_Zeroes();
+
+            Console.WriteLine(solution.TrailingZeroes(5));
+            Console.ReadKey();
         }
 
         private static void LeetCode207Test()

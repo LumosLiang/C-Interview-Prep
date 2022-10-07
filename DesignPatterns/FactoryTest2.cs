@@ -35,6 +35,7 @@ namespace DesignPatterns
                     break;
             }
 
+            IProduct p = fc.CreateProduct();
             fc.DoSth();
 
             //IProduct p = fc.CreateProduct();
@@ -111,6 +112,9 @@ namespace DesignPatterns
         }
     }
 
-
+    //private static Tuple<Int32, Int32> MinMax(int a, int b)
+    //{
+    //    return Tuple.Create(Math.Min(a, b), Math.Max(a, b));
+    //}
 
 }

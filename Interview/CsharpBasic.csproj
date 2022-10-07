@@ -56,6 +56,9 @@
     <Compile Include="Design Type\Method\ExtensionMethodTest.cs" />
     <Compile Include="Design Type\Method\TypeConstructorTest.cs" />
     <Compile Include="Design Type\Method\StructConstructorTest.cs" />
+    <Compile Include="Design Type\Parameter\VariableArgTest.cs" />
+    <Compile Include="Design Type\Parameter\RefOutMustSame.cs" />
+    <Compile Include="Design Type\Parameter\VarTest.cs" />
     <Compile Include="Design Type\Sample\BankAccount.cs" />
     <Compile Include="Design Type\Sample\Demo.cs" />
     <Compile Include="Design Type\Sample\Exceptions.cs" />

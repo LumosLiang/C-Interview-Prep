@@ -18,22 +18,26 @@ namespace Interview
 
         // Always, Always, Always pass by values
         // And this is not related to whether it is value type or a reference type
+        //For value type instances, a copy of the instance is passed to the method.This means that the
+        //method gets its own private copy of the value type and the instance in the caller isn’t affected.
 
         // for value type
         internal void PassByValuesValTest()
         {
-            int a = 100;
+            int a = 10;
             ChangeVal(a);
             Console.WriteLine(a);
             Console.ReadKey();
         }
 
+        // a is still 10
         private void ChangeVal(int a)
         {
-            a = 10;
+            a = 100;
         }
 
         // With ref and out keyword's help, we can pass by reference, which is 实参
+        // a is 100 now
         internal void CanPassByReferenceValTest()
         {
             int a = 10;
@@ -49,7 +53,9 @@ namespace Interview
 
 
         // for reference type
-
+        //When reference type objects are passed, the reference(or pointer) to the object is passed(by
+        //value) to the method.This means that the method can modify the object and the caller will see the
+        //change
         public void PassByValuesRefTest()
         {
             var book1 = new SciFiBook("book1");
@@ -57,12 +63,12 @@ namespace Interview
             Console.WriteLine(book1.Name); 
 
             var book3 = new SciFiBook("book3");
-            SetNameNew(book3, "book4");
+            SetNewBook(book3, "book4");
             Console.WriteLine(book3.Name); 
             Console.ReadKey();
         }
 
-        private static void SetNameNew(SciFiBook book, string new_name)
+        private static void SetNewBook(SciFiBook book, string new_name)
         {
             book = new SciFiBook(new_name);
         }

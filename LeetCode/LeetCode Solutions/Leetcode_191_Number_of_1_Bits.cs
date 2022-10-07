@@ -8,15 +8,18 @@ namespace LeetCode.LeetCode_Solutions
 {
     class Leetcode_191_Number_of_1_Bits
     {
-        int res = 0;
-        
-        while(n != 0)
+        public int HammingWeight(uint n)
         {
-            n = n & (n - 1);
-            res++;
-        }
-        
-        return res;
 
+            int res = 0;
+
+            while (n != 0)
+            {
+                n = n & (n - 1);
+                res++;
+            }
+
+            return res;
+        }
     }
 }
