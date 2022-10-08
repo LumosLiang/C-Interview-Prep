@@ -20,7 +20,7 @@ namespace Interview
 
         }
 
-        internal void StringBuilderInitialize()
+        public void StringBuilderInitialize()
         {
             // initialize a string using string builder
             StringBuilder sb = new StringBuilder("ABC", 50);
@@ -37,5 +37,34 @@ namespace Interview
             Console.ReadLine();
         }
 
+        internal void StringTypicalMethods()
+        {
+            string s = "test";
+
+            // indexing and slicing
+            Console.WriteLine(s[1]);
+            //Console.WriteLine(s[1..]);
+            //Console.WriteLine(s[..]);
+            //Console.WriteLine(s[2..^s.Length]);
+            Console.WriteLine(s.Substring(2));
+            Console.WriteLine(s.Substring(2,1));
+
+            // int to string, string to int
+            string numString = "123";
+            // string to int
+            int i = Convert.ToInt32(numString);
+            int i1 = Int32.Parse(numString);
+            int i2;
+            var isCan = Int32.TryParse(numString, out i2);
+
+            // string trim, split
+            string test = "   ds af gd sa fa sd s   ";
+
+            Console.WriteLine(test.Split(' '));
+            Console.WriteLine(test.Trim());
+            Console.WriteLine(test.TrimEnd('e'));
+            Console.WriteLine(test.TrimStart('d', 's'));
+
+        }
     }
 }

@@ -11,8 +11,6 @@ namespace Interview.Type
    
     class CollectionTypeTest
     {
-
-
         internal void ArrayInitialize()
         {
 
@@ -60,9 +58,7 @@ namespace Interview.Type
             }
 
             // Array slice
-
-   
-            
+ 
         }
 
         internal void ListInitialize()
@@ -94,7 +90,7 @@ namespace Interview.Type
             List<Object> contain_all = new List<object> { "", 1, 'a', new int[] { 1, 2, 3 } };
             Console.WriteLine(contain_all);
 
-            // LIST SLICE
+            // list slice
         }
 
         internal void HashtableInitialize()
@@ -110,7 +106,6 @@ namespace Interview.Type
             var member2 = hashtab_string["text"];
             Console.WriteLine(member2);
 
-
             Hashtable hashtab_int = new Hashtable()
             {
                 { 1, 2},
@@ -119,6 +114,7 @@ namespace Interview.Type
             };
         }
 
+        // Generics
         internal void DictInitialize()
         {
             // initialize a Dict
@@ -129,42 +125,122 @@ namespace Interview.Type
                 { "dib", "paint.exe"},
             };
 
-            Dictionary<int, List<int>> dict_test1 = new Dictionary<int, List<int>>();
+            //Dictionary<int, List<int>> dict_test1 = new Dictionary<int, List<int>>();
+            
+            // access
             var member = dict_test["txt"];
+
+            // add
+            dict_test.Add("csv", "Excel.exe");
+
+            // remove key
+            dict_test.Remove("txt");
+
+            foreach (var item in dict_test)
+            {
+                Console.WriteLine((item.Key, item.Value));
+            }
         }
 
+        // Tuple & ValueTuple
         internal void TupleInitialize()
         {
+            // Tuple
+            Tuple<int, int> t1 = new Tuple<int, int>(1,2);
+            var t2 = Tuple.Create(1,2,4);
+            var t3 = Tuple.Create("1", 2, true);
 
+            // ValueTuple
+            var vt = ValueTuple.Create("ters","123");
             (double, int) t = (4.5, 3);
             Console.WriteLine(t.GetType());
+
+            // Access
+            Console.WriteLine(vt.Item1);
+            Console.WriteLine(vt.Item2);
+            
         }
 
         internal void HashSetInitialize()
         {
-            HashSet<int> evennum = new HashSet<int>();
+            HashSet<int> set = new HashSet<int>();
+            SortedSet<int> setSorted = new SortedSet<int>();
+
             for (int i = 0; i < 10; i++)
             {
-                if (i % 2 == 0) evennum.Add(i);
+                set.Add(1);
             }
-            Console.WriteLine(evennum);
+            Console.WriteLine(set);
+            Console.WriteLine(set.Count);
 
+            // Typical
+            set.Add(2);
+            var b = set.Remove(3);
+            Console.Write(set.Contains(3));
+            set.UnionWith(new int[] { 2,3,45,3});
+
+            setSorted.UnionWith(set);
+
+            foreach (var item in setSorted)
+                Console.WriteLine(item);
         }
+
+        internal void StackInitialize()
+        {
+            Stack<int> s = new Stack<int>();
+
+            // Typical methods
+            Console.WriteLine(s.Count);
+            s.Push(1);
+            s.Pop();
+            s.Push(2);
+            s.Peek();
+
+            // LOOP
+            foreach (var item in s)
+                Console.WriteLine(item);
+            // no indexing
+            //for (int i = 0; i < s.Count; i++)
+            //    Console.WriteLine(s[i]);
+        }
+
 
         internal void QueueInitialize()
         {
             Queue<int> q = new Queue<int>();
 
-            Console.WriteLine(q);
+            // Typical methods
+            Console.WriteLine(q.Count);
+            q.Enqueue(1);
+            q.Dequeue();
+            q.Enqueue(2);
+            q.Peek();
 
+            foreach (var item in q)
+                Console.WriteLine(item);
         }
 
         internal void DequeueInitialize()
         {
             LinkedList<int> dq = new LinkedList<int>();
+            
+            Console.WriteLine(dq.Count);
 
-            Console.WriteLine(dq);
+            // add first, add last
+            dq.AddFirst(1);
+            dq.AddLast(2);
 
+            // pop first, pop last
+            dq.RemoveFirst();
+            dq.RemoveLast();
+
+            // Get the first and last one
+            Console.WriteLine(dq.First);
+            Console.WriteLine(dq.Last);
+
+            // Others
+            dq.AddAfter(dq.First, 11);
+            dq.AddBefore(dq.Last, 22);
         }
 
     }
