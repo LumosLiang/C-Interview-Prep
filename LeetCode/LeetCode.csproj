@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LeetCode Solutions\Class1.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_297_Serialize_and_Deserialize_Binary_Tree.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_264_Ugly_Number_II.cs" />
     <Compile Include="LeetCode Solutions\Leetcode_172_Factorial_Trailing_Zeroes.cs" />

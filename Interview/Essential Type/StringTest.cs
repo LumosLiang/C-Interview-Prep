@@ -18,6 +18,8 @@ namespace Interview
             s += "ABC";
             Console.WriteLine(s);
 
+            // this is string multiply
+            string mulitpleString = new string('a', 10);
         }
 
         public void StringBuilderInitialize()
