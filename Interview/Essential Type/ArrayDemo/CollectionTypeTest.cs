@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Interview.Type
+namespace Interview.Essential_Type.ArrayDemo
 {
    
     class CollectionTypeTest

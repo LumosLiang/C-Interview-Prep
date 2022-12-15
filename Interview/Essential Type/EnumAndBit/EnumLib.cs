@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview.Type
+namespace Interview.Essential_Type.EnumAndBit
 {
     enum Season: int
     {

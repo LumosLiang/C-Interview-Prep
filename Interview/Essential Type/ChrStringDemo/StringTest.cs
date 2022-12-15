@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interview
+namespace Interview.Essential_Type.ChrStringDemo
 {
     class StringTest
     {
@@ -27,7 +28,7 @@ namespace Interview
             // initialize a string using string builder
             StringBuilder sb = new StringBuilder("ABC", 50);
             var sb2 = new StringBuilder(20);
-            var empt = String.Empty;
+            var empt = string.Empty;
 
             StringBuilder sb3 = sb;
             sb3.Append("for StringBuilder");
@@ -53,6 +54,7 @@ namespace Interview
 
             // int to string, string to int
             string numString = "123";
+            
             // string to int
             int i = Convert.ToInt32(numString);
             int i1 = Int32.Parse(numString);
@@ -66,6 +68,18 @@ namespace Interview
             Console.WriteLine(test.Trim());
             Console.WriteLine(test.TrimEnd('e'));
             Console.WriteLine(test.TrimStart('d', 's'));
+
+        }
+
+        public void StringCompare()
+        {
+            string s1 = "Strasse";
+            string s2 = "Straße";
+            Console.WriteLine(string.Compare(s1, s2));
+            Console.WriteLine(string.Compare(s1, s2, StringComparison.Ordinal));
+
+            CultureInfo ci = new CultureInfo("de-DE");
+            Console.WriteLine(string.Compare(s1, s2, true, ci));
 
         }
     }

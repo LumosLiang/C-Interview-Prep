@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using LeetCode;
 using System.Collections;
-using Interview.Type;
+using Interview.Design_Type;
 using Interview.Design_Type.Type_and_Member_Basics;
 using Interview.Type.Basic;
 using Interview.OOP.Sample;
+using Interview.Essential_Type.StringDemo;
+using Interview.Essential_Type.ArrayDemo;
+using Interview.Essential_Type.NullableDemo;
 using Interview.Design_Type.InterfaceLearn;
 
 namespace Interview

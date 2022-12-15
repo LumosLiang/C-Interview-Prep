@@ -7,44 +7,27 @@ using System.Threading.Tasks;
 namespace LeetCode
 {
     // This is min_heap
-    class Heap
+    class Heap<T>
     {
-        private List<int> _heap;
+        private readonly List<T> _heap;
         private int _length;
+        private readonly IComparer<T> comparer;
 
         public Heap()
         {
-            _heap = new List<int>();
+            _heap = new List<T>();
             _length = 0;
+            comparer = Comparer<T>.Default;
         }
 
-        public void Enqueue(int num)
+        public void Enqueue(T num)
         {
             _heap.Add(num);
             _length++;
             SiftUp(_length - 1);
         }
 
-        private void SiftUp(int start)
-        {
-            int currIdx = start;
-            int parentIdx = (start - 1) / 2;
-
-            while (parentIdx >= 0)
-            {
-                if (_heap[parentIdx] > _heap[currIdx])
-                {
-                    Swap(_heap, parentIdx, currIdx);
-                    currIdx = parentIdx;
-                    parentIdx = (currIdx - 1) / 2;
-                }
-                else
-                    break;
-            }
-        
-        }
-
-        public int Dequeue()
+        public T Dequeue()
         {
             if (_length == 0) throw new IndexOutOfRangeException();
             Swap(_heap, 0, _length - 1);
@@ -55,16 +38,38 @@ namespace LeetCode
             return res;
         }
 
+
+        private void SiftUp(int start)
+        {
+            int currIdx = start;
+            int parentIdx = (start - 1) / 2;
+
+            while (parentIdx >= 0)
+            {
+                // if (_heap[parentIdx] > _heap[currIdx])
+                if (comparer.Compare(_heap[parentIdx], _heap[currIdx]) > 0)
+                {
+                    Swap(_heap, parentIdx, currIdx);
+                    currIdx = parentIdx;
+                    parentIdx = (currIdx - 1) / 2;
+                }
+                else
+                    break;
+            }
+        }
+
         private void SiftDown(int start)
         {
             int currIdx = start;
             int left = currIdx * 2 + 1;
+            
 
             while (left < _length)
             {
-                if (left + 1 < _length && _heap[left + 1] < _heap[left])
+                if (left + 1 < _length && comparer.Compare(_heap[left + 1], _heap[left]) < 0)
                     left++;
-                if (_heap[currIdx] > _heap[left])
+                if (comparer.Compare(_heap[currIdx], _heap[left]) == 1)
+
                 {
                     Swap(_heap, currIdx, left);
                     currIdx = left;
@@ -76,7 +81,7 @@ namespace LeetCode
 
         }
 
-        private void Swap(List<int> nums, int left, int right)
+        private void Swap(List<T> nums, int left, int right)
         {
             if (left < nums.Count && left >= 0 && right < nums.Count && right >= 0)
             {
@@ -86,15 +91,9 @@ namespace LeetCode
             }
         }
 
-        public int Peek()
-        {
-            return _heap[0];
-        }
+        public T Peek() => _heap[0];
 
-        public int GetSize()
-        {
-            return _length;
-        }
+        public int GetSize() =>_length;
 
     }
 }
